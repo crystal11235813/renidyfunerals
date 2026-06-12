@@ -185,17 +185,49 @@
     return url.toString();
   }
 
+  function getLinkFunnelProperties(link) {
+    return {
+      funnel_intent: link.getAttribute("data-funnel-intent") || "",
+      selected_needs: link.getAttribute("data-selected-needs") || "",
+      plan_id: link.getAttribute("data-plan-id") || "",
+      auto_selected: link.getAttribute("data-auto-selected") || "",
+    };
+  }
+
+  function addFunnelPropertiesToUrl(url, properties) {
+    Object.keys(properties).forEach(function (key) {
+      var value = properties[key];
+      if (value !== undefined && value !== null && value !== "" && !url.searchParams.has(key)) {
+        url.searchParams.set(key, value);
+      }
+    });
+  }
+
   function bindClicks() {
     document.querySelectorAll("[data-track-cta]").forEach(function (link) {
       link.addEventListener("click", function (event) {
         var ctaName = link.getAttribute("data-track-cta") || link.textContent.trim();
         var ctaLocation = link.getAttribute("data-track-location") || "unknown";
-        var destination = decorateUrl(link.getAttribute("href"), ctaName, ctaLocation);
-        track("cta_clicked", {
-          cta_name: ctaName,
-          cta_location: ctaLocation,
-          destination_url: destination,
-        });
+        var funnelProperties = getLinkFunnelProperties(link);
+        var destinationUrl = new URL(decorateUrl(link.getAttribute("href"), ctaName, ctaLocation));
+        addFunnelPropertiesToUrl(destinationUrl, funnelProperties);
+        var destination = destinationUrl.toString();
+        var ctaProperties = Object.assign(
+          {
+            cta_name: ctaName,
+            cta_location: ctaLocation,
+            destination_url: destination,
+          },
+          funnelProperties
+        );
+        if (funnelProperties.funnel_intent) {
+          track("hero_cta_clicked", ctaProperties);
+        }
+        if (funnelProperties.plan_id) {
+          track("funnel_plan_selected", funnelProperties);
+          track("funnel_plan_continue", funnelProperties);
+        }
+        track("cta_clicked", ctaProperties);
         if (link.hostname && link.hostname !== window.location.hostname) {
           event.preventDefault();
           window.setTimeout(function () {

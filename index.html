@@ -50,21 +50,34 @@
             Renidy connects families with practical funeral planning guidance, transparent options,
             and death doula support so you are not sorting through every decision alone.
           </p>
-          <div class="hero-actions">
+          <div class="intent-actions" aria-label="Choose your planning path">
             <a
-              class="button primary"
+              class="intent-card urgent"
               href="https://www.renidy.com/?booking=free"
-              data-track-cta="Start free consultation"
+              data-track-cta="Someone just died"
               data-track-location="hero"
-              >Start a free consultation</a
+              data-funnel-intent="now"
+              data-selected-needs="unsure"
+              data-plan-id="free-intro"
+              data-auto-selected="true"
             >
+              <span class="intent-kicker">Someone just died</span>
+              <strong>Continue to free call</strong>
+              <span class="selected-need" aria-label="Preselected need">
+                I'm not sure yet - just need help
+              </span>
+            </a>
             <a
-              class="button secondary"
+              class="intent-card"
               href="https://www.renidy.com/public-ai-funeral-planner"
-              data-track-cta="Build funeral plan"
+              data-track-cta="Planning ahead"
               data-track-location="hero"
-              >Build a funeral plan</a
+              data-funnel-intent="ahead"
             >
+              <span class="intent-kicker">Planning ahead</span>
+              <strong>Build a funeral plan</strong>
+              <span>Make decisions before anything happens.</span>
+            </a>
           </div>
           <div class="trust-row" aria-label="Key benefits">
             <span>No upfront commitment</span>
@@ -81,15 +94,15 @@
           <ol class="task-list">
             <li>
               <span class="task-status done"></span>
-              Confirm immediate needs and location
+              Start with the free intro call
             </li>
             <li>
               <span class="task-status active"></span>
-              Compare funeral, cremation, and burial paths
+              Tell us if you are unsure and need help now
             </li>
             <li>
               <span class="task-status"></span>
-              Prepare calls, paperwork, and family updates
+              Review paid support only after the call path
             </li>
             <li>
               <span class="task-status"></span>
@@ -101,7 +114,11 @@
             href="https://www.renidy.com/?booking=free"
             data-track-cta="Panel consultation"
             data-track-location="hero_panel"
-            >Talk to someone now</a
+            data-funnel-intent="now"
+            data-selected-needs="unsure"
+            data-plan-id="free-intro"
+            data-auto-selected="true"
+            >Continue to free call</a
           >
         </div>
       </section>
@@ -119,13 +136,13 @@
           </article>
           <article>
             <span>2</span>
-            <h3>Get matched to next steps</h3>
-            <p>Renidy narrows the options and helps you understand what matters first.</p>
+            <h3>Start with Free Intro Call</h3>
+            <p>Free Intro Call is the recommended first step before choosing paid support.</p>
           </article>
           <article>
             <span>3</span>
-            <h3>Book support if you need it</h3>
-            <p>Talk with a guide who can help coordinate vendors, paperwork, and family decisions.</p>
+            <h3>Choose paid support later</h3>
+            <p>After the free-call booking path, decide whether you need a session or ongoing help.</p>
           </article>
         </div>
       </section>
@@ -151,7 +168,11 @@
           href="https://www.renidy.com/?booking=free"
           data-track-cta="Final consultation"
           data-track-location="final_cta"
-          >Book a free 30-minute consultation</a
+          data-funnel-intent="now"
+          data-selected-needs="unsure"
+          data-plan-id="free-intro"
+          data-auto-selected="true"
+          >Continue to free call</a
         >
       </section>
 
