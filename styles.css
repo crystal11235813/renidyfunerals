@@ -85,8 +85,115 @@ body {
     sans-serif;
 }
 
+html.passcode-locked body {
+  overflow: hidden;
+}
+
+html.passcode-locked .page-shell {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 a {
   color: inherit;
+}
+
+.passcode-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: 24px;
+  background:
+    linear-gradient(120deg, rgba(246, 242, 236, 0.94), rgba(229, 197, 172, 0.88)),
+    radial-gradient(circle at 72% 20%, rgba(255, 213, 99, 0.28), transparent 32%),
+    var(--bg);
+}
+
+.passcode-card {
+  width: min(100%, 440px);
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(75, 14, 14, 0.14);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.passcode-eyebrow {
+  margin: 0 0 10px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.passcode-card h1 {
+  margin: 0 0 10px;
+  color: var(--wine);
+  font-family: "TT Ramillas Trial", Georgia, serif;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1;
+}
+
+.passcode-copy {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.passcode-card label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.passcode-card input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid rgba(75, 14, 14, 0.22);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.passcode-card input:focus {
+  border-color: var(--green);
+  outline: 3px solid rgba(12, 83, 61, 0.18);
+}
+
+.passcode-card input[aria-invalid="true"] {
+  border-color: var(--wine);
+}
+
+.passcode-error {
+  min-height: 20px;
+  margin: 8px 0 14px;
+  color: var(--wine);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.passcode-card button {
+  width: 100%;
+  min-height: 48px;
+  color: white;
+  background: var(--green);
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.passcode-card button:hover {
+  background: var(--green-dark);
 }
 
 .page-shell {

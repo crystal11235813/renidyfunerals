@@ -17,8 +17,33 @@
     />
     <meta property="og:url" content="https://renidyfunerals.com/" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("renidyfunerals_passcode_ok") !== "true") {
+            document.documentElement.classList.add("passcode-locked");
+          }
+        } catch (_) {
+          document.documentElement.classList.add("passcode-locked");
+        }
+      })();
+    </script>
+    <style>
+      html.passcode-locked body {
+        overflow: hidden;
+      }
+
+      html.passcode-locked .page-shell {
+        visibility: hidden;
+      }
+
+      .passcode-gate {
+        display: none;
+      }
+    </style>
     <link rel="stylesheet" href="/styles.css" />
     <script src="/config.js"></script>
+    <script src="/gate.js" defer></script>
     <script src="/analytics.js" defer></script>
   </head>
   <body>
