@@ -22,185 +22,252 @@
     <script src="/analytics.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Renidy Funerals home">
-        <span class="brand-mark">R</span>
-        <span>Renidy Funerals</span>
-      </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#how-it-works">How it works</a>
-        <a href="#support">Support</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a
-        class="header-cta"
-        href="https://www.renidy.com/?booking=free"
-        data-track-cta="Header consultation"
-        data-track-location="header"
-        >Free consult</a
-      >
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Funeral planning support when decisions cannot wait</p>
-          <h1>Plan the next step with a real person by your side.</h1>
-          <p class="hero-lede">
-            Renidy connects families with practical funeral planning guidance, transparent options,
-            and death doula support so you are not sorting through every decision alone.
-          </p>
-          <div class="intent-actions" aria-label="Choose your planning path">
-            <a
-              class="intent-card urgent"
-              href="https://www.renidy.com/?booking=free"
-              data-track-cta="Someone just died"
-              data-track-location="hero"
-              data-funnel-intent="now"
-              data-selected-needs="unsure"
-              data-plan-id="free-intro"
-              data-auto-selected="true"
-            >
-              <span class="intent-kicker">Someone just died</span>
-              <strong>Continue to free call</strong>
-              <span class="selected-need" aria-label="Preselected need">
-                I'm not sure yet - just need help
-              </span>
-            </a>
-            <a
-              class="intent-card"
-              href="https://www.renidy.com/public-ai-funeral-planner"
-              data-track-cta="Planning ahead"
-              data-track-location="hero"
-              data-funnel-intent="ahead"
-            >
-              <span class="intent-kicker">Planning ahead</span>
-              <strong>Build a funeral plan</strong>
-              <span>Make decisions before anything happens.</span>
-            </a>
-          </div>
-          <div class="trust-row" aria-label="Key benefits">
-            <span>No upfront commitment</span>
-            <span>Transparent next steps</span>
-            <span>Family-friendly guidance</span>
-          </div>
-        </div>
-
-        <div class="hero-panel" aria-label="Planning checklist preview">
-          <div class="panel-topline">
-            <span>First 48 hours</span>
-            <strong>Guided plan</strong>
-          </div>
-          <ol class="task-list">
-            <li>
-              <span class="task-status done"></span>
-              Start with the free intro call
-            </li>
-            <li>
-              <span class="task-status active"></span>
-              Tell us if you are unsure and need help now
-            </li>
-            <li>
-              <span class="task-status"></span>
-              Review paid support only after the call path
-            </li>
-            <li>
-              <span class="task-status"></span>
-              Book support with a matched guide
-            </li>
-          </ol>
-          <a
-            class="panel-link"
-            href="https://www.renidy.com/?booking=free"
-            data-track-cta="Panel consultation"
-            data-track-location="hero_panel"
-            data-funnel-intent="now"
-            data-selected-needs="unsure"
-            data-plan-id="free-intro"
-            data-auto-selected="true"
-            >Continue to free call</a
-          >
-        </div>
-      </section>
-
-      <section class="band" id="how-it-works">
-        <div class="section-heading">
-          <p class="eyebrow">How it works</p>
-          <h2>Three steps, then a clearer plan.</h2>
-        </div>
-        <div class="steps">
-          <article>
-            <span>1</span>
-            <h3>Tell us what happened</h3>
-            <p>Share whether this is an immediate loss, planning ahead, cremation, burial, or a full service.</p>
-          </article>
-          <article>
-            <span>2</span>
-            <h3>Start with Free Intro Call</h3>
-            <p>Free Intro Call is the recommended first step before choosing paid support.</p>
-          </article>
-          <article>
-            <span>3</span>
-            <h3>Choose paid support later</h3>
-            <p>After the free-call booking path, decide whether you need a session or ongoing help.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="support" id="support">
-        <div>
-          <p class="eyebrow">What families use it for</p>
-          <h2>Immediate planning, cost clarity, and fewer dropped balls.</h2>
-        </div>
-        <div class="support-grid">
-          <div>Funeral or cremation path decisions</div>
-          <div>Vendor and service comparison</div>
-          <div>Checklist and paperwork guidance</div>
-          <div>Family coordination and reminders</div>
-        </div>
-      </section>
-
-      <section class="final-cta">
-        <p class="eyebrow">Start with one conversation</p>
-        <h2>You do not have to figure it all out before asking for help.</h2>
+    <div class="page-shell">
+      <header class="top-nav">
+        <a class="brand" href="/" aria-label="Renidy Funerals home">
+          <span class="brand-mark">R</span>
+          <span>Renidy</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#how-it-works">How it works</a>
+          <a href="#support">Support</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
         <a
-          class="button primary"
+          class="nav-cta"
           href="https://www.renidy.com/?booking=free"
-          data-track-cta="Final consultation"
-          data-track-location="final_cta"
-          data-funnel-intent="now"
-          data-selected-needs="unsure"
-          data-plan-id="free-intro"
-          data-auto-selected="true"
-          >Continue to free call</a
+          data-track-cta="Header consultation"
+          data-track-location="header"
+          >Free consult</a
         >
-      </section>
+      </header>
 
-      <section class="faq" id="faq">
-        <h2>Questions</h2>
-        <details>
-          <summary>Is this a funeral home?</summary>
-          <p>No. Renidy helps families organize choices, understand next steps, and connect with support.</p>
-        </details>
-        <details>
-          <summary>Can I use this if someone just died?</summary>
-          <p>Yes. Start with the free consultation and Renidy will help you focus on the next decisions.</p>
-        </details>
-        <details>
-          <summary>Does this replace Renidy?</summary>
-          <p>No. This standalone site is a focused entry point. Consultation and planning tools are handled by Renidy.</p>
-        </details>
-      </section>
-    </main>
+      <div class="trust-banner">
+        <span>Free first call</span>
+        <span>Private</span>
+        <span>Not a funeral home</span>
+        <span>Transparent next steps</span>
+      </div>
 
-    <footer>
-      <p>Renidy Funerals</p>
-      <a
-        href="https://www.renidy.com/privacy"
-        data-track-cta="Privacy"
-        data-track-location="footer"
-        >Privacy</a
-      >
-    </footer>
+      <main>
+        <section id="hero-section" class="hero" data-section-type="dark">
+          <div class="hero-image" aria-hidden="true">
+            <img src="/assets/images/33.webp" alt="" />
+          </div>
+          <div class="hero-gradient" aria-hidden="true"></div>
+
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <h1>
+                Plan the next step with a real person
+                <em>by your side</em>
+              </h1>
+              <p>
+                Get calm funeral planning support, transparent options, and death doula guidance
+                so you are not sorting through every decision alone.
+              </p>
+
+              <div class="hero-cards">
+                <a
+                  class="intent-card"
+                  href="https://www.renidy.com/?booking=free"
+                  data-track-cta="Someone just died"
+                  data-track-location="hero"
+                >
+                  <span class="badge now">NOW</span>
+                  <strong>Someone just died</strong>
+                  <small>I need help in the next 24-48 hrs</small>
+                  <span class="arrow" aria-hidden="true">-></span>
+                </a>
+
+                <a
+                  class="intent-card"
+                  href="https://www.renidy.com/public-ai-funeral-planner"
+                  data-track-cta="Planning ahead"
+                  data-track-location="hero"
+                >
+                  <span class="badge ahead">AHEAD</span>
+                  <strong>I&apos;m planning ahead</strong>
+                  <small>Before anything happens</small>
+                  <span class="arrow" aria-hidden="true">-></span>
+                </a>
+              </div>
+
+              <div class="hero-proof">
+                <span>Free first call</span>
+                <span aria-hidden="true">·</span>
+                <span>Private</span>
+                <span aria-hidden="true">·</span>
+                <span>Not a funeral home</span>
+              </div>
+            </div>
+            <div class="hero-spacer" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <section class="logo-strip" aria-label="Partner and press logos">
+          <div class="logo-row">
+            <img src="/assets/images/Logos/1.webp" alt="Partner logo 1" />
+            <img src="/assets/images/Logos/2.webp" alt="Partner logo 2" />
+            <img src="/assets/images/Logos/3.webp" alt="Partner logo 3" />
+            <img src="/assets/images/Logos/4.webp" alt="Partner logo 4" />
+            <img src="/assets/images/Logos/5.webp" alt="Partner logo 5" />
+            <img src="/assets/images/Logos/6.webp" alt="Partner logo 6" />
+            <img src="/assets/images/Logos/7.webp" alt="Partner logo 7" />
+          </div>
+        </section>
+
+        <section class="dark-card-section" id="how-it-works" data-section-type="dark">
+          <div class="dark-card-bg" aria-hidden="true">
+            <img src="/assets/images/phone-mockup-all-in-one.webp" alt="" />
+          </div>
+          <div class="dark-card-copy">
+            <h2>Funeral planning, all in one place.</h2>
+            <p>We help you understand what matters first, what can wait, and who to call next.</p>
+            <a
+              class="yellow-button"
+              href="https://www.renidy.com/?booking=free"
+              data-track-cta="Start free consultation"
+              data-track-location="all_in_one_section"
+              >Start My Free 30-Min Consultation <span aria-hidden="true">-></span></a
+            >
+          </div>
+        </section>
+
+        <section class="support-section" id="support">
+          <div class="section-heading">
+            <h2>Choose the level of support you need</h2>
+            <p>
+              Start with a free call, get a focused next-step plan, or book deeper support if your
+              family needs help coordinating details.
+            </p>
+          </div>
+
+          <div class="pricing-grid" id="pricing">
+            <article class="price-card">
+              <span class="pill green">Free Intro Call</span>
+              <h3>Talk to someone first</h3>
+              <div class="price"><span>$</span>0</div>
+              <p>Meet your guide, ask questions, and understand your next step without pressure.</p>
+              <ul>
+                <li>30-minute consultation</li>
+                <li>No credit card required</li>
+                <li>Available same week</li>
+              </ul>
+              <a
+                class="outline-button"
+                href="https://www.renidy.com/?booking=free"
+                data-track-cta="Free intro card"
+                data-track-location="pricing"
+                >Start with a Free Call</a
+              >
+            </article>
+
+            <article class="price-card featured">
+              <div class="featured-bar">
+                <span>Most Popular</span>
+                <span>100% Satisfaction Guarantee</span>
+              </div>
+              <span class="pill gold">One-Time Session</span>
+              <h3>Get a plan in 60 minutes</h3>
+              <div class="price"><span>$</span>79</div>
+              <p>A focused hour to map out the decisions in front of you and reduce confusion.</p>
+              <ul>
+                <li>Personalized next-steps plan</li>
+                <li>Document and resource checklist</li>
+                <li>Follow-up guidance from Renidy</li>
+              </ul>
+              <a
+                class="solid-button"
+                href="https://www.renidy.com/?booking=free"
+                data-track-cta="One-time session card"
+                data-track-location="pricing"
+                >Book a Session</a
+              >
+            </article>
+
+            <article class="price-card">
+              <span class="pill green">Concierge Planning</span>
+              <h3>Get hands-on support</h3>
+              <div class="price"><span>$</span>299</div>
+              <p>For families who need help coordinating options, paperwork, and family decisions.</p>
+              <ul>
+                <li>Up to 3 hours of guidance</li>
+                <li>Vendor and paperwork support</li>
+                <li>Family coordination help</li>
+              </ul>
+              <a
+                class="outline-button"
+                href="https://www.renidy.com/?booking=free"
+                data-track-cta="Concierge support card"
+                data-track-location="pricing"
+                >Book My Guide</a
+              >
+            </article>
+          </div>
+        </section>
+
+        <section class="steps-section">
+          <div class="section-heading">
+            <h2>Three steps, then a clearer plan.</h2>
+          </div>
+          <div class="steps-grid">
+            <article>
+              <span>1</span>
+              <h3>Tell us what happened</h3>
+              <p>Share whether this is immediate, planning ahead, cremation, burial, or a service.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <h3>Get matched to next steps</h3>
+              <p>Renidy narrows the options and helps you understand what matters first.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <h3>Book support if needed</h3>
+              <p>Talk with a guide who can help coordinate vendors, paperwork, and family decisions.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="final-cta" data-section-type="dark">
+          <h2>You do not have to figure it all out before asking for help.</h2>
+          <a
+            class="yellow-button"
+            href="https://www.renidy.com/?booking=free"
+            data-track-cta="Final consultation"
+            data-track-location="final_cta"
+            >Book a free 30-minute consultation <span aria-hidden="true">-></span></a
+          >
+        </section>
+
+        <section class="faq-section" id="faq">
+          <h2>Questions</h2>
+          <details>
+            <summary>Is this a funeral home?</summary>
+            <p>No. Renidy helps families organize choices, understand next steps, and connect with support.</p>
+          </details>
+          <details>
+            <summary>Can I use this if someone just died?</summary>
+            <p>Yes. Start with the free consultation and Renidy will help you focus on the next decisions.</p>
+          </details>
+          <details>
+            <summary>Does this replace Renidy?</summary>
+            <p>No. This standalone site is a focused entry point. Consultation and planning tools are handled by Renidy.</p>
+          </details>
+        </section>
+      </main>
+
+      <footer>
+        <span>Renidy Funerals</span>
+        <a
+          href="https://www.renidy.com/privacy"
+          data-track-cta="Privacy"
+          data-track-location="footer"
+          >Privacy</a
+        >
+      </footer>
+    </div>
   </body>
 </html>

@@ -6,10 +6,14 @@ This project intentionally does not live in the Renidy app repo and does not req
 Next.js app to deploy. CTAs can hand off to `renidy.com` with tracking parameters, similar to how a
 separate campaign site can send qualified traffic into the main product.
 
+The page mirrors the public Renidy landing-page visual system and section structure, while keeping
+campaign-specific Renidy Funerals copy.
+
 ## Files
 
 - `index.html` - landing page
 - `styles.css` - responsive styling
+- `assets/images/` - copied public Renidy landing-page imagery used by this standalone static site
 - `config.js` - public analytics and handoff configuration
 - `analytics.js` - UTM, click id, ValueTrack, GA4/GTM, and PostHog tracking
 - `robots.txt` and `sitemap.xml` - standalone domain crawl files
