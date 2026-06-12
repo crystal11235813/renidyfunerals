@@ -16,6 +16,9 @@
     } catch (_) {}
     document.documentElement.classList.remove("passcode-locked");
     if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+    try {
+      window.dispatchEvent(new CustomEvent("renidyfunerals:access-granted"));
+    } catch (_) {}
   }
 
   function renderGate() {

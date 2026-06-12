@@ -7,4 +7,6 @@ window.RENIDY_FUNERALS_CONFIG = {
   gtmId: "",
   posthogToken: "",
   posthogHost: "https://us.i.posthog.com",
+  tawkPropertyId: "",
+  tawkWidgetId: "default",
 };

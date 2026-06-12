@@ -16,6 +16,7 @@ campaign-specific Renidy Funerals copy.
 - `assets/images/` - copied public Renidy landing-page imagery used by this standalone static site
 - `config.js` - public analytics and handoff configuration
 - `analytics.js` - UTM, click id, ValueTrack, GA4/GTM, and PostHog tracking
+- `tawk.js` - Tawk.to chat loader and attribution handoff
 - `robots.txt` and `sitemap.xml` - standalone domain crawl files
 
 ## Configure Analytics
@@ -32,6 +33,8 @@ window.RENIDY_FUNERALS_CONFIG = {
   gtmId: "GTM-XXXXXXX",
   posthogToken: "phc_...",
   posthogHost: "https://us.i.posthog.com",
+  tawkPropertyId: "YOUR_TAWK_PROPERTY_ID",
+  tawkWidgetId: "default",
 };
 ```
 
@@ -48,6 +51,20 @@ you want clean A/B reporting in one place. Segment by:
 - `matchtype`
 - `network`
 - `device`
+
+## Configure Tawk
+
+Paste the Tawk property ID and widget ID from the Tawk install snippet into `config.js`.
+
+The loader waits until the passcode gate is unlocked before loading chat, then sends available
+campaign attribution into Tawk attributes:
+
+- `site_domain`
+- `source_domain`
+- `funnel_variant`
+- `utm_*`
+- click IDs such as `gclid`, `gbraid`, `wbraid`, and `msclkid`
+- `analytics_session_id`
 
 ## Google Ads Final URL Suffix
 
@@ -69,9 +86,7 @@ Any static host works:
 - S3 + CloudFront
 - GitHub Pages
 
-Point DNS for `renidyfunerals.com` at that host, not at the Renidy app deployment. As of the latest
-check, the domain still points to Squarespace records, so DNS must be changed before this site can
-go live.
+Production is currently deployed from `main` through GitHub Pages for `renidyfunerals.com`.
 
 ## Local Preview
 
