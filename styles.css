@@ -350,14 +350,14 @@ a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 48px;
   width: 100%;
-  max-width: 1280px;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 64px);
+  padding: 0 clamp(24px, 8vw, 160px);
 }
 
 .hero-copy {
   max-width: 620px;
-  margin-left: clamp(0px, -2vw, 0px);
+  margin-left: 0;
 }
 
 h1,
