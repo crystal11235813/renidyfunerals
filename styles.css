@@ -343,6 +343,23 @@ a {
   background: linear-gradient(to right, rgba(213, 169, 133, 1), rgba(180, 172, 163, 0.4));
 }
 
+.hero-plan-online-hotspot {
+  position: absolute;
+  top: 13.2%;
+  left: 52.7%;
+  z-index: 35;
+  display: block;
+  width: clamp(190px, 13.1vw, 460px);
+  height: clamp(44px, 3vw, 104px);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.hero-plan-online-hotspot:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+
 .hero-inner {
   position: relative;
   z-index: 20;
@@ -1000,6 +1017,10 @@ footer a {
   .hero-image {
     opacity: 0.28;
     margin-left: 0;
+  }
+
+  .hero-plan-online-hotspot {
+    display: none;
   }
 
   .logo-strip {
