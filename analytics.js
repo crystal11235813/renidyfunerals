@@ -3,6 +3,9 @@
   var siteDomain = config.siteDomain || "renidyfunerals.com";
   var funnelVariant = config.funnelVariant || "renidyfunerals_standalone";
   var storagePrefix = "renidyfunerals_";
+  var abExperimentId = config.abExperimentId || "role_term_v1";
+  var abStorageKey = storagePrefix + abExperimentId + "_variant";
+  var roleVariant = assignRoleVariant();
   var utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id"];
   var clickIdKeys = ["gclid", "gbraid", "wbraid", "msclkid", "dclid", "fbclid", "ttclid"];
   var adKeys = [
@@ -28,6 +31,59 @@
     } catch (_) {
       return {};
     }
+  }
+
+  function normalizeRoleVariant(value) {
+    return value === "care" || value === "guide" ? value : "";
+  }
+
+  function assignRoleVariant() {
+    if (config.abEnabled === false) return "guide";
+
+    var params = new URLSearchParams(window.location.search);
+    var forced = normalizeRoleVariant(params.get("ab"));
+    if (forced) {
+      try {
+        localStorage.setItem(abStorageKey, forced);
+      } catch (_) {}
+      return forced;
+    }
+
+    try {
+      var existing = normalizeRoleVariant(localStorage.getItem(abStorageKey));
+      if (existing) return existing;
+      var generated = Math.random() < 0.5 ? "guide" : "care";
+      localStorage.setItem(abStorageKey, generated);
+      return generated;
+    } catch (_) {
+      return "guide";
+    }
+  }
+
+  function getRoleTerm() {
+    return roleVariant === "care" ? "care advisor" : "guide";
+  }
+
+  function applyRoleVariant() {
+    document.documentElement.setAttribute("data-ab-experiment", abExperimentId);
+    document.documentElement.setAttribute("data-ab-variant", roleVariant);
+    document.querySelectorAll("[data-role-copy]").forEach(function (node) {
+      var copy = node.getAttribute(roleVariant === "care" ? "data-care" : "data-guide");
+      if (copy) node.textContent = copy;
+    });
+  }
+
+  function maybeRouteIntentDeepLink() {
+    var params = new URLSearchParams(window.location.search);
+    var intent = params.get("intent");
+    if (window.location.pathname !== "/" || (intent !== "now" && intent !== "ahead")) return;
+    var targetPath = intent === "now" ? "/need-help-now/" : "/planning-ahead/";
+    var targetUrl = new URL(targetPath, window.location.href);
+    params.forEach(function (value, key) {
+      targetUrl.searchParams.set(key, value);
+    });
+    if (!targetUrl.searchParams.has("ab")) targetUrl.searchParams.set("ab", roleVariant);
+    window.location.replace(targetUrl.toString());
   }
 
   function getSessionId() {
@@ -57,6 +113,10 @@
     attribution.site_domain = window.location.hostname;
     attribution.source_domain = siteDomain;
     attribution.funnel_variant = params.get("funnel_variant") || funnelVariant;
+    attribution.ab_experiment_id = abExperimentId;
+    attribution.variant = roleVariant;
+    attribution.role_variant = roleVariant;
+    attribution.role_term = getRoleTerm();
     attribution.landing_page = attribution.landing_page || window.location.pathname + window.location.search;
     attribution.initial_referrer = attribution.initial_referrer || document.referrer || "direct";
     attribution.analytics_session_id = getSessionId();
@@ -76,6 +136,10 @@
         site_domain: window.location.hostname,
         source_domain: siteDomain,
         funnel_variant: funnelVariant,
+        ab_experiment_id: abExperimentId,
+        variant: roleVariant,
+        role_variant: roleVariant,
+        role_term: getRoleTerm(),
         analytics_session_id: getSessionId(),
       },
       safeJsonParse(localStorage.getItem(storagePrefix + "attribution"))
@@ -180,14 +244,19 @@
     });
     url.searchParams.set("source_domain", siteDomain);
     url.searchParams.set("funnel_variant", funnelVariant);
+    if (!url.searchParams.has("ab")) url.searchParams.set("ab", roleVariant);
+    url.searchParams.set("ab_experiment_id", abExperimentId);
+    url.searchParams.set("variant", roleVariant);
     url.searchParams.set("cta_name", ctaName || "unknown");
     url.searchParams.set("cta_location", ctaLocation || "unknown");
     return url.toString();
   }
 
   function getLinkFunnelProperties(link) {
+    var intent = link.getAttribute("data-funnel-intent") || "";
     return {
-      funnel_intent: link.getAttribute("data-funnel-intent") || "",
+      intent: intent,
+      funnel_intent: intent,
       selected_needs: link.getAttribute("data-selected-needs") || "",
       plan_id: link.getAttribute("data-plan-id") || "",
       auto_selected: link.getAttribute("data-auto-selected") || "",
@@ -217,6 +286,9 @@
             cta_name: ctaName,
             cta_location: ctaLocation,
             destination_url: destination,
+            variant: roleVariant,
+            role_variant: roleVariant,
+            role_term: getRoleTerm(),
           },
           funnelProperties
         );
@@ -246,15 +318,32 @@
   }
 
   captureParams();
+  maybeRouteIntentDeepLink();
   setupGoogle();
   setupPostHog();
 
   document.addEventListener("DOMContentLoaded", function () {
+    applyRoleVariant();
     var attribution = captureParams();
     if (window.posthog && window.posthog.register) window.posthog.register(getAttribution());
     track("funnel_landed", attribution);
     track("landing_page_view", attribution);
     track("page_view", {});
+    var intent = new URLSearchParams(window.location.search).get("intent");
+    if (intent === "now" || intent === "ahead") {
+      track("triage_tap", {
+        source: "landing",
+        intent: intent,
+        funnel_intent: intent,
+        skipped_triage: "true",
+      });
+      track("funnel_start", {
+        source: "landing",
+        intent: intent,
+        funnel_intent: intent,
+        skipped_triage: "true",
+      });
+    }
     bindClicks();
   });
 })();

@@ -29,13 +29,15 @@ Edit `config.js` before deployment:
 window.RENIDY_FUNERALS_CONFIG = {
   siteDomain: "renidyfunerals.com",
   funnelVariant: "renidyfunerals_standalone",
-  defaultCtaUrl: "https://renidyfunerals.com/need-help-now/",
+  defaultCtaUrl: "https://renidyfunerals.com/need-help-now/?intent=now",
   ga4Id: "G-XXXXXXX",
   gtmId: "GTM-XXXXXXX",
   posthogToken: "phc_...",
   posthogHost: "https://us.i.posthog.com",
   tawkPropertyId: "YOUR_TAWK_PROPERTY_ID",
   tawkWidgetId: "default",
+  abEnabled: true,
+  abExperimentId: "role_term_v1",
 };
 ```
 
@@ -45,6 +47,10 @@ you want clean A/B reporting in one place. Segment by:
 - `site_domain`
 - `source_domain`
 - `funnel_variant`
+- `ab_experiment_id`
+- `variant`
+- `role_variant`
+- `role_term`
 - `campaignid`
 - `adgroupid`
 - `creative`
@@ -66,6 +72,22 @@ campaign attribution into Tawk attributes:
 - `utm_*`
 - click IDs such as `gclid`, `gbraid`, `wbraid`, and `msclkid`
 - `analytics_session_id`
+
+## Funnel Pathing and A/B Test
+
+Landing-page CTAs deep-link into the two standalone funnels:
+
+- `?intent=now` opens `/need-help-now/`
+- `?intent=ahead` opens `/planning-ahead/`
+
+The role-word A/B test is `role_term_v1`. Visitors are split 50/50 between `guide` and `care`
+unless a URL forces the variant with `?ab=guide` or `?ab=care`. The variant is persisted in
+`localStorage`, copied onto outgoing CTA URLs, and included on tracked events as:
+
+- `ab_experiment_id`
+- `variant`
+- `role_variant`
+- `role_term`
 
 ## Google Ads Final URL Suffix
 

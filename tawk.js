@@ -27,6 +27,11 @@
     attribution.site_domain = window.location.hostname;
     attribution.source_domain = config.siteDomain || "renidyfunerals.com";
     attribution.funnel_variant = attribution.funnel_variant || config.funnelVariant || "renidyfunerals_standalone";
+    attribution.ab_experiment_id = attribution.ab_experiment_id || config.abExperimentId || "role_term_v1";
+    attribution.variant = attribution.variant || attribution.role_variant || "";
+    attribution.role_variant = attribution.role_variant || attribution.variant || "";
+    attribution.role_term =
+      attribution.role_term || (attribution.role_variant === "care" ? "care advisor" : "guide");
     return attribution;
   }
 
@@ -36,6 +41,10 @@
       "site_domain",
       "source_domain",
       "funnel_variant",
+      "ab_experiment_id",
+      "variant",
+      "role_variant",
+      "role_term",
       "landing_page",
       "initial_referrer",
       "analytics_session_id",
