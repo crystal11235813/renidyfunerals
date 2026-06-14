@@ -223,12 +223,17 @@
         if (funnelProperties.funnel_intent) {
           track("hero_cta_clicked", ctaProperties);
         }
+        if (ctaName === "Plan everything online") {
+          track("plan_everything_online_click", ctaProperties);
+        }
         if (funnelProperties.plan_id) {
           track("funnel_plan_selected", funnelProperties);
           track("funnel_plan_continue", funnelProperties);
         }
         track("cta_clicked", ctaProperties);
+        track("cta_click", ctaProperties);
         if (link.hostname && link.hostname !== window.location.hostname) {
+          track("redirect_to_renidy_planner", ctaProperties);
           event.preventDefault();
           window.setTimeout(function () {
             window.location.href = destination;
@@ -248,6 +253,7 @@
     var attribution = captureParams();
     if (window.posthog && window.posthog.register) window.posthog.register(getAttribution());
     track("funnel_landed", attribution);
+    track("landing_page_view", attribution);
     track("page_view", {});
     bindClicks();
   });
