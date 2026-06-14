@@ -21,7 +21,6 @@
     <script src="/config.js"></script>
     <script src="/gate.js" defer></script>
     <script src="/analytics.js" defer></script>
-    <script src="/funnel.js" defer></script>
     <script src="/tawk.js" defer></script>
   </head>
   <body>
@@ -48,102 +47,56 @@
           </p>
         </section>
 
-        <section class="funnel-panel funnel-flow" id="doulas" data-funnel-flow data-funnel-intent="ahead">
-          <div class="funnel-progress" aria-label="Funnel progress">
-            <span data-progress-step="1" class="active">1. Focus</span>
-            <span data-progress-step="2">2. Details</span>
-            <span data-progress-step="3">3. Contact</span>
+        <section class="funnel-panel" id="doulas">
+          <h2>What would you like to organize first?</h2>
+          <div class="funnel-options">
+            <a
+              class="intent-card"
+              href="/planning-ahead/?intent=ahead&need=preferences"
+              data-track-cta="Planning preferences"
+              data-track-location="planning_ahead"
+              data-funnel-intent="ahead"
+              data-selected-needs="preferences"
+            >
+              <strong>Preferences</strong>
+              <small>Cremation, burial, service style, budget, and what matters most.</small>
+              <span class="arrow" aria-hidden="true">-></span>
+            </a>
+            <a
+              class="intent-card"
+              href="/planning-ahead/?intent=ahead&need=family-roles"
+              data-track-cta="Family roles"
+              data-track-location="planning_ahead"
+              data-funnel-intent="ahead"
+              data-selected-needs="family-roles"
+            >
+              <strong>Family roles</strong>
+              <small>Clarify who should be called, who decides, and what should be documented.</small>
+              <span class="arrow" aria-hidden="true">-></span>
+            </a>
+            <a
+              class="intent-card"
+              href="/planning-ahead/?intent=ahead&need=doula-support"
+              data-track-cta="Doula support"
+              data-track-location="planning_ahead"
+              data-funnel-intent="ahead"
+              data-selected-needs="doula-support"
+            >
+              <strong>Doula support</strong>
+              <small
+                data-role-copy
+                data-guide="Choose the type of guide who can help before or during a crisis."
+                data-care="Choose the type of care advisor who can help before or during a crisis."
+                >Choose the type of guide who can help before or during a crisis.</small
+              >
+              <span class="arrow" aria-hidden="true">-></span>
+            </a>
           </div>
+        </section>
 
-          <div class="funnel-step active" data-step="1">
-            <h2>What would you like to organize first?</h2>
-            <p>Choose one starting point. You can add more later.</p>
-            <div class="funnel-options">
-              <button type="button" class="intent-card" data-funnel-option="preferences">
-                <strong>Preferences</strong>
-                <small>Cremation, burial, service style, budget, and what matters most.</small>
-                <span class="arrow" aria-hidden="true">-></span>
-              </button>
-              <button type="button" class="intent-card" data-funnel-option="family-roles">
-                <strong>Family roles</strong>
-                <small>Clarify who should be called, who decides, and what should be documented.</small>
-                <span class="arrow" aria-hidden="true">-></span>
-              </button>
-              <button type="button" class="intent-card" data-funnel-option="doula-support">
-                <strong>Doula support</strong>
-                <small
-                  data-role-copy
-                  data-guide="Choose the type of guide who can help before or during a crisis."
-                  data-care="Choose the type of care advisor who can help before or during a crisis."
-                  >Choose the type of guide who can help before or during a crisis.</small
-                >
-                <span class="arrow" aria-hidden="true">-></span>
-              </button>
-            </div>
-          </div>
-
-          <form class="funnel-form" data-funnel-form>
-            <div class="funnel-step" data-step="2">
-              <h2>What should the plan cover?</h2>
-              <div class="funnel-fields">
-                <label>
-                  Timeline
-                  <select name="timeline">
-                    <option value="next-month">Next month</option>
-                    <option value="next-3-months">Next 3 months</option>
-                    <option value="this-year">This year</option>
-                    <option value="just-exploring">Just exploring</option>
-                  </select>
-                </label>
-                <label>
-                  ZIP code
-                  <input name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="78209" />
-                </label>
-                <label class="full">
-                  Notes
-                  <textarea name="notes" rows="4" placeholder="Share budget, family, or preference details."></textarea>
-                </label>
-              </div>
-              <div class="funnel-actions">
-                <button type="button" class="outline-button" data-funnel-back>Back</button>
-                <button type="button" class="solid-button" data-funnel-next>Continue</button>
-              </div>
-            </div>
-
-            <div class="funnel-step" data-step="3">
-              <h2>Where should we send your planning path?</h2>
-              <div class="funnel-fields">
-                <label>
-                  Name
-                  <input name="name" autocomplete="name" required placeholder="Your name" />
-                </label>
-                <label>
-                  Phone
-                  <input name="phone" autocomplete="tel" required placeholder="(555) 555-5555" />
-                </label>
-                <label class="full">
-                  Email
-                  <input name="email" type="email" autocomplete="email" placeholder="you@example.com" />
-                </label>
-              </div>
-              <div class="funnel-actions">
-                <button type="button" class="outline-button" data-funnel-back>Back</button>
-                <button type="submit" class="solid-button">Send my planning path</button>
-              </div>
-            </div>
-          </form>
-
-          <div class="funnel-step funnel-success" data-step="success" aria-live="polite">
-            <h2>Your planning path is ready.</h2>
-            <p>
-              Call Renidy when you are ready and we can pick up from here. Your answers stay
-              available in this browser session.
-            </p>
-            <div class="funnel-actions">
-              <a class="solid-button" href="tel:+12105803549">Call Renidy</a>
-              <a class="outline-button" href="/">Back to Renidy Funerals</a>
-            </div>
-          </div>
+        <section class="final-cta" data-section-type="dark">
+          <h2>This funnel is ready for the next form/booking step.</h2>
+          <p>Traffic stays on renidyfunerals.com while the full flow is built.</p>
         </section>
       </main>
     </div>

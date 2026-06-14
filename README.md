@@ -18,7 +18,6 @@ campaign-specific Renidy Funerals copy.
 - `assets/images/` - copied public Renidy landing-page imagery used by this standalone static site
 - `config.js` - public analytics and handoff configuration
 - `analytics.js` - UTM, click id, ValueTrack, GA4/GTM, and PostHog tracking
-- `funnel.js` - interactive standalone funnel steps and lead handoff
 - `tawk.js` - Tawk.to chat loader and attribution handoff
 - `robots.txt` and `sitemap.xml` - standalone domain crawl files
 
@@ -31,8 +30,6 @@ window.RENIDY_FUNERALS_CONFIG = {
   siteDomain: "renidyfunerals.com",
   funnelVariant: "renidyfunerals_standalone",
   defaultCtaUrl: "https://renidyfunerals.com/need-help-now/?intent=now",
-  leadEndpoint: "https://hooks.zapier.com/...",
-  bookingUrl: "https://...",
   ga4Id: "G-XXXXXXX",
   gtmId: "GTM-XXXXXXX",
   posthogToken: "phc_...",
@@ -91,10 +88,6 @@ unless a URL forces the variant with `?ab=guide` or `?ab=care`. The variant is p
 - `variant`
 - `role_variant`
 - `role_term`
-
-`leadEndpoint` is optional for display but required for automatic CRM/SMS handoff. Until it is set,
-the funnel stores the latest submitted answers in the visitor's browser session and tracks
-`lead_captured` / `lead_handoff` for analytics.
 
 ## Google Ads Final URL Suffix
 

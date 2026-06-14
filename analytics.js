@@ -317,8 +317,6 @@
     });
   }
 
-  window.RENIDY_FUNERALS_TRACK = track;
-
   captureParams();
   maybeRouteIntentDeepLink();
   setupGoogle();

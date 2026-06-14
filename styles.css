@@ -1054,123 +1054,6 @@ h1 em {
   background: #fffaf3;
 }
 
-.funnel-flow {
-  scroll-margin-top: 88px;
-}
-
-.funnel-progress {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 26px;
-}
-
-.funnel-progress span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
-  color: rgba(75, 14, 14, 0.66);
-  background: rgba(75, 14, 14, 0.07);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.funnel-progress span.active {
-  color: white;
-  background: var(--green);
-}
-
-.funnel-step {
-  display: none;
-}
-
-.funnel-step.active {
-  display: block;
-}
-
-.funnel-flow .intent-card {
-  width: 100%;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
-.funnel-flow .intent-card.selected {
-  border-color: var(--green);
-  box-shadow:
-    0 0 0 3px rgba(12, 83, 61, 0.14),
-    0 12px 28px rgba(36, 22, 20, 0.16);
-}
-
-.funnel-fields {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.funnel-fields label {
-  display: grid;
-  gap: 8px;
-  color: var(--wine);
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.funnel-fields .full {
-  grid-column: 1 / -1;
-}
-
-.funnel-fields input,
-.funnel-fields select,
-.funnel-fields textarea {
-  width: 100%;
-  min-height: 48px;
-  padding: 12px 14px;
-  color: var(--ink);
-  background: #fffaf3;
-  border: 1px solid rgba(75, 14, 14, 0.18);
-  border-radius: 8px;
-  font: inherit;
-}
-
-.funnel-fields textarea {
-  resize: vertical;
-}
-
-.funnel-fields input:focus,
-.funnel-fields select:focus,
-.funnel-fields textarea:focus {
-  border-color: var(--green);
-  outline: 3px solid rgba(12, 83, 61, 0.16);
-}
-
-.funnel-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.funnel-actions .solid-button,
-.funnel-actions .outline-button {
-  min-width: 160px;
-  border: 0;
-  cursor: pointer;
-}
-
-.funnel-actions .outline-button {
-  border: 1px solid rgba(75, 14, 14, 0.22);
-}
-
-.funnel-success p {
-  max-width: 620px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.55;
-}
-
 .faq-section {
   max-width: 980px;
   margin: 0 auto;
@@ -1226,10 +1109,6 @@ footer a {
   .pricing-grid,
   .steps-grid,
   .funnel-options {
-    grid-template-columns: 1fr;
-  }
-
-  .funnel-fields {
     grid-template-columns: 1fr;
   }
 

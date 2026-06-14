@@ -2,8 +2,6 @@ window.RENIDY_FUNERALS_CONFIG = {
   siteDomain: "renidyfunerals.com",
   funnelVariant: "renidyfunerals_standalone",
   defaultCtaUrl: "https://renidyfunerals.com/need-help-now/?intent=now",
-  leadEndpoint: "",
-  bookingUrl: "",
   ga4Id: "",
   gtmId: "",
   posthogToken: "",

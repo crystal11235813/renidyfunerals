@@ -21,7 +21,6 @@
     <script src="/config.js"></script>
     <script src="/gate.js" defer></script>
     <script src="/analytics.js" defer></script>
-    <script src="/funnel.js" defer></script>
     <script src="/tawk.js" defer></script>
   </head>
   <body>
@@ -48,97 +47,53 @@
           </p>
         </section>
 
-        <section class="funnel-panel funnel-flow" data-funnel-flow data-funnel-intent="now">
-          <div class="funnel-progress" aria-label="Funnel progress">
-            <span data-progress-step="1" class="active">1. Need</span>
-            <span data-progress-step="2">2. Details</span>
-            <span data-progress-step="3">3. Contact</span>
+        <section class="funnel-panel">
+          <h2>What do you need help with first?</h2>
+          <div class="funnel-options">
+            <a
+              class="intent-card"
+              href="/need-help-now/?intent=now&need=calls-paperwork"
+              data-track-cta="Urgent calls and paperwork"
+              data-track-location="need_help_now"
+              data-funnel-intent="now"
+              data-selected-needs="calls-paperwork"
+            >
+              <strong>Calls and paperwork</strong>
+              <small>Death certificate, funeral home, cemetery, cremation, and family logistics.</small>
+              <span class="arrow" aria-hidden="true">-></span>
+            </a>
+            <a
+              class="intent-card"
+              href="/need-help-now/?intent=now&need=compare-options"
+              data-track-cta="Compare funeral options"
+              data-track-location="need_help_now"
+              data-funnel-intent="now"
+              data-selected-needs="compare-options"
+            >
+              <strong>Compare options</strong>
+              <small>Understand cremation, burial, services, timelines, and what can wait.</small>
+              <span class="arrow" aria-hidden="true">-></span>
+            </a>
+            <a
+              class="intent-card"
+              href="/need-help-now/?intent=now&need=talk-to-guide"
+              data-track-cta="Talk to role"
+              data-track-location="need_help_now"
+              data-funnel-intent="now"
+              data-selected-needs="talk-to-guide"
+            >
+              <strong data-role-copy data-guide="Talk to a guide" data-care="Talk to a care advisor"
+                >Talk to a guide</strong
+              >
+              <small>Get a calm first conversation before making decisions under pressure.</small>
+              <span class="arrow" aria-hidden="true">-></span>
+            </a>
           </div>
+        </section>
 
-          <div class="funnel-step active" data-step="1">
-            <h2>What do you need help with first?</h2>
-            <p>Pick the closest match. We will keep the path short.</p>
-            <div class="funnel-options">
-              <button type="button" class="intent-card" data-funnel-option="calls-paperwork">
-                <strong>Calls and paperwork</strong>
-                <small>Death certificate, funeral home, cemetery, cremation, and family logistics.</small>
-                <span class="arrow" aria-hidden="true">-></span>
-              </button>
-              <button type="button" class="intent-card" data-funnel-option="compare-options">
-                <strong>Compare options</strong>
-                <small>Understand cremation, burial, services, timelines, and what can wait.</small>
-                <span class="arrow" aria-hidden="true">-></span>
-              </button>
-              <button type="button" class="intent-card" data-funnel-option="talk-to-guide">
-                <strong data-role-copy data-guide="Talk to a guide" data-care="Talk to a care advisor">Talk to a guide</strong>
-                <small>Get a calm first conversation before making decisions under pressure.</small>
-                <span class="arrow" aria-hidden="true">-></span>
-              </button>
-            </div>
-          </div>
-
-          <form class="funnel-form" data-funnel-form>
-            <div class="funnel-step" data-step="2">
-              <h2>What is happening right now?</h2>
-              <div class="funnel-fields">
-                <label>
-                  Timeline
-                  <select name="timeline">
-                    <option value="today">Today</option>
-                    <option value="24-48-hours">Next 24-48 hours</option>
-                    <option value="this-week">This week</option>
-                    <option value="not-sure">Not sure</option>
-                  </select>
-                </label>
-                <label>
-                  ZIP code
-                  <input name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="78209" />
-                </label>
-                <label class="full">
-                  Anything we should know?
-                  <textarea name="notes" rows="4" placeholder="Tell us what feels most urgent."></textarea>
-                </label>
-              </div>
-              <div class="funnel-actions">
-                <button type="button" class="outline-button" data-funnel-back>Back</button>
-                <button type="button" class="solid-button" data-funnel-next>Continue</button>
-              </div>
-            </div>
-
-            <div class="funnel-step" data-step="3">
-              <h2>Where should we send the next step?</h2>
-              <div class="funnel-fields">
-                <label>
-                  Name
-                  <input name="name" autocomplete="name" required placeholder="Your name" />
-                </label>
-                <label>
-                  Phone
-                  <input name="phone" autocomplete="tel" required placeholder="(555) 555-5555" />
-                </label>
-                <label class="full">
-                  Email
-                  <input name="email" type="email" autocomplete="email" placeholder="you@example.com" />
-                </label>
-              </div>
-              <div class="funnel-actions">
-                <button type="button" class="outline-button" data-funnel-back>Back</button>
-                <button type="submit" class="solid-button">Get my next step</button>
-              </div>
-            </div>
-          </form>
-
-          <div class="funnel-step funnel-success" data-step="success" aria-live="polite">
-            <h2>Your next step is ready.</h2>
-            <p>
-              Call Renidy now and we can pick up from here. Your answers stay available in this
-              browser session.
-            </p>
-            <div class="funnel-actions">
-              <a class="solid-button" href="tel:+12105803549">Call Renidy</a>
-              <a class="outline-button" href="/">Back to Renidy Funerals</a>
-            </div>
-          </div>
+        <section class="final-cta" data-section-type="dark">
+          <h2>We are keeping this funnel on Renidy Funerals.</h2>
+          <p>The next form/booking step can be wired here without routing visitors to renidy.com.</p>
         </section>
       </main>
     </div>
