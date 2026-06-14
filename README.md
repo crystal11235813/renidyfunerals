@@ -3,8 +3,8 @@
 Standalone static landing site for `renidyfunerals.com`.
 
 This project intentionally does not live in the Renidy app repo and does not require the Renidy
-Next.js app to deploy. CTAs can hand off to `renidy.com` with tracking parameters, similar to how a
-separate campaign site can send qualified traffic into the main product.
+Next.js app to deploy. CTAs stay on `renidyfunerals.com` so this domain can run standalone funnel
+experiments without sending visitors into the main Renidy app.
 
 The page mirrors the public Renidy landing-page visual system and section structure, while keeping
 campaign-specific Renidy Funerals copy.
@@ -12,6 +12,8 @@ campaign-specific Renidy Funerals copy.
 ## Files
 
 - `index.html` - landing page
+- `need-help-now/index.html` - urgent/immediate-need funnel
+- `planning-ahead/index.html` - planning-ahead funnel
 - `styles.css` - responsive styling
 - `assets/images/` - copied public Renidy landing-page imagery used by this standalone static site
 - `config.js` - public analytics and handoff configuration
@@ -27,8 +29,7 @@ Edit `config.js` before deployment:
 window.RENIDY_FUNERALS_CONFIG = {
   siteDomain: "renidyfunerals.com",
   funnelVariant: "renidyfunerals_standalone",
-  renidyBaseUrl: "https://www.renidy.com",
-  defaultCtaUrl: "https://www.renidy.com/?booking=free",
+  defaultCtaUrl: "https://renidyfunerals.com/need-help-now/",
   ga4Id: "G-XXXXXXX",
   gtmId: "GTM-XXXXXXX",
   posthogToken: "phc_...",
