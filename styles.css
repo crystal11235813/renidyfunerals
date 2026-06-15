@@ -1082,6 +1082,75 @@ footer a {
   text-decoration: none;
 }
 
+html.funnel-modal-open,
+html.funnel-modal-open body {
+  overflow: hidden;
+}
+
+.funnel-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.funnel-modal.is-open {
+  display: flex;
+}
+
+.funnel-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 24, 20, 0.62);
+  backdrop-filter: blur(8px);
+}
+
+.funnel-modal__dialog {
+  position: relative;
+  width: min(560px, calc(100vw - 32px));
+  height: min(820px, calc(100dvh - 44px));
+  overflow: hidden;
+  border: 2px solid rgba(28, 28, 26, 0.85);
+  border-radius: 24px;
+  background: #fbf8ee;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+}
+
+.funnel-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1.5px solid rgba(28, 28, 26, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #1c1c1a;
+  cursor: pointer;
+  font: 28px/1 Arial, sans-serif;
+  box-shadow: 0 8px 20px rgba(28, 28, 26, 0.12);
+}
+
+.funnel-modal__close:hover,
+.funnel-modal__close:focus-visible {
+  border-color: rgba(28, 28, 26, 0.55);
+  outline: none;
+}
+
+.funnel-modal__frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fbf8ee;
+}
+
 @media (max-width: 1024px) {
   .hero {
     top: 0;
@@ -1194,6 +1263,17 @@ footer a {
 @media (max-width: 480px) {
   .nav-cta {
     display: none;
+  }
+
+  .funnel-modal {
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  .funnel-modal__dialog {
+    width: 100%;
+    height: min(760px, calc(100dvh - 20px));
+    border-radius: 20px;
   }
 
   h1 {

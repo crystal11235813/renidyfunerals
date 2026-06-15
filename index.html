@@ -67,6 +67,7 @@
           data-track-cta="Header consultation"
           data-track-location="header"
           data-funnel-intent="now"
+          data-modal-funnel="true"
           >Free consult</a
         >
       </header>
@@ -91,6 +92,7 @@
             data-track-cta="Plan everything online"
             data-track-location="hero_artwork"
             data-funnel-intent="ahead"
+            data-modal-funnel="true"
           ></a>
 
           <div class="hero-inner">
@@ -111,6 +113,7 @@
                   data-track-cta="Someone just died"
                   data-track-location="hero"
                   data-funnel-intent="now"
+                  data-modal-funnel="true"
                 >
                   <span class="badge now">NOW</span>
                   <strong>Someone just died</strong>
@@ -124,6 +127,7 @@
                   data-track-cta="Planning ahead"
                   data-track-location="hero"
                   data-funnel-intent="ahead"
+                  data-modal-funnel="true"
                 >
                   <span class="badge ahead">AHEAD</span>
                   <strong>I&apos;m planning ahead</strong>
@@ -169,6 +173,7 @@
               data-track-cta="Start free consultation"
               data-track-location="all_in_one_section"
               data-funnel-intent="now"
+              data-modal-funnel="true"
               >Start My Free 30-Min Consultation <span aria-hidden="true">-></span></a
             >
           </div>
@@ -266,6 +271,8 @@
               href="/planning-ahead/?intent=ahead"
               data-track-cta="See all doulas"
               data-track-location="meet_doulas"
+              data-funnel-intent="ahead"
+              data-modal-funnel="true"
             >
               <strong>See all 200+ doulas</strong>
               <span>Free to browse</span>
@@ -304,6 +311,7 @@
                 data-track-location="pricing"
                 data-funnel-intent="now"
                 data-plan-id="free-intro"
+                data-modal-funnel="true"
                 >Start with a Free Call</a
               >
             </article>
@@ -329,6 +337,7 @@
                 data-track-location="pricing"
                 data-funnel-intent="now"
                 data-plan-id="one-time-session"
+                data-modal-funnel="true"
                 >Book a Session</a
               >
             </article>
@@ -350,6 +359,7 @@
                 data-track-location="pricing"
                 data-funnel-intent="now"
                 data-plan-id="concierge"
+                data-modal-funnel="true"
                 ><span data-role-copy data-guide="Book My Guide" data-care="Book My Care Advisor">Book My Guide</span></a
               >
             </article>
@@ -390,6 +400,7 @@
             data-track-cta="Final consultation"
             data-track-location="final_cta"
             data-funnel-intent="now"
+            data-modal-funnel="true"
             >Book a free 30-minute consultation <span aria-hidden="true">-></span></a
           >
         </section>
@@ -421,5 +432,71 @@
         >
       </footer>
     </div>
+    <div class="funnel-modal" id="funnel-modal" aria-hidden="true">
+      <div class="funnel-modal__backdrop" data-modal-close></div>
+      <section
+        class="funnel-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Renidy funeral planning"
+      >
+        <button class="funnel-modal__close" type="button" aria-label="Close" data-modal-close>
+          &times;
+        </button>
+        <iframe
+          class="funnel-modal__frame"
+          id="funnel-modal-frame"
+          title="Renidy funeral planning"
+          loading="lazy"
+        ></iframe>
+      </section>
+    </div>
+    <script>
+      (function () {
+        var modal = document.getElementById("funnel-modal");
+        var frame = document.getElementById("funnel-modal-frame");
+        var lastFocused = null;
+
+        function modalUrl(rawUrl) {
+          var url = new URL(rawUrl, window.location.href);
+          url.searchParams.set("modal", "1");
+          return url.toString();
+        }
+
+        function openModal(url) {
+          lastFocused = document.activeElement;
+          frame.src = modalUrl(url);
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.documentElement.classList.add("funnel-modal-open");
+          var close = modal.querySelector("[data-modal-close]");
+          if (close) close.focus();
+        }
+
+        function closeModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.documentElement.classList.remove("funnel-modal-open");
+          frame.removeAttribute("src");
+          if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+        }
+
+        document.querySelectorAll("[data-modal-funnel='true']").forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+            event.preventDefault();
+            openModal(link.href);
+          });
+        });
+
+        modal.querySelectorAll("[data-modal-close]").forEach(function (control) {
+          control.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+        });
+      })();
+    </script>
   </body>
 </html>
