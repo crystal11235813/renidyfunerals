@@ -1,101 +1,1033 @@
 <!doctype html>
-<html lang="en" class="passcode-locked">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Someone just died | Renidy Funerals</title>
-    <meta
-      name="description"
-      content="Get calm next-step funeral planning help when arrangements are urgent."
-    />
-    <link rel="canonical" href="https://renidyfunerals.com/need-help-now/" />
-    <style>
-      html.passcode-locked body > *:not(.passcode-gate) {
-        display: none !important;
-      }
-      .passcode-gate {
-        display: none;
-      }
-    </style>
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/config.js"></script>
-    <script src="/gate.js" defer></script>
-    <script src="/analytics.js" defer></script>
-    <script src="/tawk.js" defer></script>
-  </head>
-  <body>
-    <div class="page-shell funnel-page">
-      <header class="top-nav">
-        <a class="brand" href="/" aria-label="Renidy Funerals home">
-          <span class="brand-mark">R</span>
-          <span>Renidy</span>
-        </a>
-        <nav aria-label="Main navigation">
-          <a href="/planning-ahead/">Planning ahead</a>
-          <a href="/#support">Support</a>
-          <a href="/#faq">FAQ</a>
-        </nav>
-      </header>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Renidy — Talk to a care advisor, free</title>
+<meta name="description" content="You don't have to figure out the next part alone. Talk to a certified care advisor — free — or build a plan in minutes. Private. Not a funeral home." />
+<meta property="og:title" content="Renidy — You don't have to do this alone" />
+<meta property="og:description" content="Talk to a certified care advisor, free. Or build a plan in minutes. Private. Not a funeral home." />
+<meta property="og:type" content="website" />
 
-      <main>
-        <section class="funnel-hero" data-section-type="dark">
-          <p class="eyebrow">Immediate support</p>
-          <h1>Someone just died. Start with the next clear step.</h1>
-          <p>
-            Tell us what is urgent and we will route you toward the right funeral planning support
-            without sending you away from Renidy Funerals.
-          </p>
-        </section>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-        <section class="funnel-panel">
-          <h2>What do you need help with first?</h2>
-          <div class="funnel-options">
-            <a
-              class="intent-card"
-              href="/need-help-now/?intent=now&need=calls-paperwork"
-              data-track-cta="Urgent calls and paperwork"
-              data-track-location="need_help_now"
-              data-funnel-intent="now"
-              data-selected-needs="calls-paperwork"
-            >
-              <strong>Calls and paperwork</strong>
-              <small>Death certificate, funeral home, cemetery, cremation, and family logistics.</small>
-              <span class="arrow" aria-hidden="true">-></span>
-            </a>
-            <a
-              class="intent-card"
-              href="/need-help-now/?intent=now&need=compare-options"
-              data-track-cta="Compare funeral options"
-              data-track-location="need_help_now"
-              data-funnel-intent="now"
-              data-selected-needs="compare-options"
-            >
-              <strong>Compare options</strong>
-              <small>Understand cremation, burial, services, timelines, and what can wait.</small>
-              <span class="arrow" aria-hidden="true">-></span>
-            </a>
-            <a
-              class="intent-card"
-              href="/need-help-now/?intent=now&need=talk-to-guide"
-              data-track-cta="Talk to role"
-              data-track-location="need_help_now"
-              data-funnel-intent="now"
-              data-selected-needs="talk-to-guide"
-            >
-              <strong data-role-copy data-guide="Talk to a guide" data-care="Talk to a care advisor"
-                >Talk to a guide</strong
-              >
-              <small>Get a calm first conversation before making decisions under pressure.</small>
-              <span class="arrow" aria-hidden="true">-></span>
-            </a>
-          </div>
-        </section>
+<style>
+  :root{
+    --ink:#1c1c1a; --paper:#FBF8EE; --paper-2:#F4EEDD;
+    --green:#013927; --green-soft:#0a5238; --mint:#CAE6D5; --mint-soft:#E2F0E7;
+    --yellow:#FAD357; --wine:#5C2A1E; --rust:#B23A2C; --rust-soft:#FCEFEC;
+    --g1:#E4E0D2; --g2:#C7C2B2; --g3:#7d7d76; --line:#1c1c1a;
+    --accent:var(--green);                 /* recolored per track via JS/CSS */
+    --accent-soft:var(--mint-soft);
+    --shadow:0 10px 30px rgba(28,28,26,.12);
+    --shadow-sm:0 4px 14px rgba(28,28,26,.08);
+    --r:18px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Open Sans",system-ui,-apple-system,sans-serif; line-height:1.5;
+    -webkit-font-smoothing:antialiased; min-height:100dvh;
+  }
+  .hand{font-family:"Caveat",cursive; font-weight:700;}
+  .mono{font-family:"Space Mono",monospace;}
 
-        <section class="final-cta" data-section-type="dark">
-          <h2>We are keeping this funnel on Renidy Funerals.</h2>
-          <p>The next form/booking step can be wired here without routing visitors to renidy.com.</p>
-        </section>
-      </main>
+  /* icon system ----------------------------------------------------- */
+  .i{width:1em; height:1em; display:inline-block; vertical-align:-.125em; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round;}
+  .ic{width:46px; height:46px; flex:0 0 auto; border-radius:13px; display:grid; place-items:center;
+      background:var(--accent-soft); border:1.5px solid color-mix(in srgb, var(--accent) 28%, transparent); color:var(--accent);}
+  .ic .i{width:23px; height:23px;}
+
+  /* track tinting --------------------------------------------------- */
+  [data-track="now"]{--accent:var(--rust); --accent-soft:var(--rust-soft);}
+  [data-track="ahead"]{--accent:var(--green); --accent-soft:var(--mint-soft);}
+  [data-track="diy"]{--accent:var(--wine); --accent-soft:#F6ECE9;}
+
+  /* shell ----------------------------------------------------------- */
+  .app{max-width:520px; margin:0 auto; min-height:100dvh; display:flex; flex-direction:column; padding:0 20px env(safe-area-inset-bottom,24px); position:relative;}
+  .topbar{position:sticky; top:0; z-index:20; background:linear-gradient(var(--paper) 72%, rgba(251,248,238,0)); padding:14px 0 10px;}
+  .toprow{display:flex; align-items:center; gap:12px; min-height:36px;}
+  .back{appearance:none; border:1.5px solid var(--g2); background:#fff; border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); display:none; place-items:center; flex:0 0 auto; transition:.15s;}
+  .back .i{width:18px;height:18px;}
+  .back.show{display:grid;} .back:active{transform:scale(.92);}
+  .brand{font-family:"Caveat",cursive; font-weight:700; font-size:27px; letter-spacing:-.01em; color:var(--green); line-height:1;}
+  .brand span{color:var(--rust);}
+  .trustpill{margin-left:auto; font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.02em; color:var(--green); background:var(--mint-soft); border:1.5px solid var(--mint); border-radius:999px; padding:5px 11px; white-space:nowrap; display:inline-flex; align-items:center; gap:5px;}
+  .trustpill .i{width:12px;height:12px;}
+
+  /* segmented stepper ---------------------------------------------- */
+  .stepper{display:none; margin-top:14px;}
+  .stepper.show{display:block;}
+  .seg-track{display:flex; gap:5px;}
+  .seg{flex:1; height:6px; border-radius:999px; background:var(--g1); transition:background .35s, transform .35s;}
+  .seg.done{background:var(--accent);}
+  .seg.cur{background:var(--accent); position:relative; transform:scaleY(1.5);}
+  .seg-label{font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--g3); margin-top:8px;}
+  .seg-label b{color:var(--accent);}
+
+  /* recap chips ----------------------------------------------------- */
+  .recap{display:none; gap:6px; margin-top:11px; overflow-x:auto; padding-bottom:2px; scrollbar-width:none;}
+  .recap::-webkit-scrollbar{display:none;}
+  .recap.show{display:flex;}
+  .rchip{flex:0 0 auto; font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.01em; color:var(--accent);
+         background:var(--accent-soft); border:1.5px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius:999px; padding:4px 9px; display:inline-flex; align-items:center; gap:5px; white-space:nowrap; animation:pop .3s cubic-bezier(.2,1.4,.4,1) both;}
+  .rchip .i{width:11px; height:11px;}
+  @keyframes pop{from{opacity:0; transform:scale(.7);} to{opacity:1; transform:none;}}
+
+  /* screens --------------------------------------------------------- */
+  main{flex:1; display:flex; flex-direction:column; padding:10px 0 28px;}
+  .screen{display:none;}
+  .screen.active{display:flex; flex-direction:column; flex:1;}
+  .screen.from-right{animation:inR .36s cubic-bezier(.2,.8,.2,1);}
+  .screen.from-left{animation:inL .36s cubic-bezier(.2,.8,.2,1);}
+  @keyframes inR{from{opacity:0; transform:translateX(26px);} to{opacity:1; transform:none;}}
+  @keyframes inL{from{opacity:0; transform:translateX(-26px);} to{opacity:1; transform:none;}}
+
+  .eyebrow{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:6px 0 12px; display:flex; align-items:center; gap:7px;}
+  .eyebrow .i{width:14px;height:14px;}
+  h1{font-family:"Caveat",cursive; font-weight:700; font-size:clamp(35px,9.5vw,48px); line-height:.97; margin:0 0 12px; letter-spacing:-.01em;}
+  h2{font-size:25px; line-height:1.16; margin:0 0 8px; font-weight:700; letter-spacing:-.01em;}
+  .say{font-size:15px; color:#4f4f45; margin:0 0 22px; max-width:36ch;}
+  .say.center{margin-left:auto; margin-right:auto; text-align:center;}
+  .q{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--g3); margin:2px 0 10px;}
+
+  /* choice cards (staggered) --------------------------------------- */
+  .choices{display:flex; flex-direction:column; gap:12px;}
+  .choice{appearance:none; text-align:left; width:100%; cursor:pointer; background:#fff; border:2px solid var(--line);
+    border-radius:var(--r); padding:16px 17px; box-shadow:var(--shadow-sm); display:flex; align-items:center; gap:14px;
+    transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease; font-family:inherit; color:inherit;}
+  .choice:active{transform:translateY(1px) scale(.995);}
+  .choice:hover{box-shadow:var(--shadow); border-color:var(--accent);}
+  .choice .ct{flex:1; min-width:0;}
+  .choice .ct b{display:block; font-size:16.5px; font-weight:700; line-height:1.22;}
+  .choice .ct small{display:block; font-size:13px; color:var(--g3); margin-top:3px;}
+  .choice .arrow{color:var(--g2); flex:0 0 auto; transition:transform .14s, color .14s;}
+  .choice .arrow .i{width:20px;height:20px;}
+  .choice:hover .arrow{color:var(--accent); transform:translateX(3px);}
+  .choice .freebadge{font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--green); background:var(--mint-soft); border:1.5px solid var(--mint); border-radius:999px; padding:4px 9px; white-space:nowrap; flex:0 0 auto;}
+
+  .screen.active .choices .choice{opacity:0; animation:cardUp .44s cubic-bezier(.2,.8,.2,1) forwards;}
+  .screen.active .choices .choice:nth-child(1){animation-delay:.05s;}
+  .screen.active .choices .choice:nth-child(2){animation-delay:.12s;}
+  .screen.active .choices .choice:nth-child(3){animation-delay:.19s;}
+  .screen.active .choices .choice:nth-child(4){animation-delay:.26s;}
+  @keyframes cardUp{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;}}
+
+  /* big triage CTAs (stacked, layered depth) ----------------------- */
+  .cta{appearance:none; text-align:left; width:100%; cursor:pointer; border-radius:22px; padding:22px; color:#fff; border:none;
+    display:flex; align-items:center; gap:15px; font-family:inherit; position:relative; isolation:isolate;
+    box-shadow:0 12px 28px rgba(28,28,26,.16); transition:transform .15s ease, box-shadow .15s ease;}
+  .cta::before{content:""; position:absolute; inset:0; border-radius:22px; z-index:-1; transform:translateY(7px) scale(.965); opacity:.34; filter:blur(.5px);}
+  .cta.now,.cta.now::before{background:var(--rust);}
+  .cta.ahead,.cta.ahead::before{background:var(--green);}
+  .cta:active{transform:translateY(2px);}
+  .cta .cic{width:50px; height:50px; border-radius:14px; background:rgba(255,255,255,.16); display:grid; place-items:center; flex:0 0 auto;}
+  .cta .cic .i{width:26px; height:26px; stroke-width:1.8;}
+  .cta .lbl{font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; opacity:.85; display:block; margin-bottom:4px;}
+  .cta .big{font-family:"Caveat",cursive; font-weight:700; font-size:30px; line-height:.98; display:block;}
+  .cta .sub2{display:block; font-size:12.5px; opacity:.9; margin-top:3px;}
+  .cta .arrow{margin-left:auto; opacity:.9; flex:0 0 auto;}
+  .cta .arrow .i{width:24px;height:24px;}
+
+  /* selectable pills ------------------------------------------------ */
+  .pills{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:4px;}
+  .pill{appearance:none; cursor:pointer; flex:1; min-width:92px; text-align:center; background:#fff; border:2px solid var(--g2);
+    border-radius:13px; padding:13px 10px; font-family:inherit; font-size:14px; font-weight:600; color:var(--ink); transition:.14s; position:relative;}
+  .pill:hover{border-color:color-mix(in srgb, var(--accent) 55%, var(--g2));}
+  .pill.sel{border-color:var(--accent); background:var(--accent-soft); color:var(--accent);}
+  .pill.sel::after{content:""; position:absolute; top:6px; right:7px; width:13px; height:13px; border-radius:50%; background:var(--accent);
+    -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') center/9px no-repeat;
+            mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') center/9px no-repeat;}
+  .fieldlabel{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--g3); margin:20px 0 8px;}
+
+  /* fields ---------------------------------------------------------- */
+  .field{display:flex; flex-direction:column; margin-bottom:14px;}
+  .field label{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--g3); margin-bottom:6px;}
+  .field input, .field select{font-family:inherit; font-size:16px; padding:15px 14px; border:2px solid var(--g2); border-radius:13px; background:#fff; color:var(--ink); transition:.14s;}
+  .field input:focus, .field select:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft);}
+  .field .err{color:var(--rust); font-size:12.5px; margin-top:6px; display:none;}
+  .field.invalid input{border-color:var(--rust);}
+  .field.invalid .err{display:block;}
+
+  .submit{appearance:none; cursor:pointer; width:100%; margin-top:10px; border:none; border-radius:15px; padding:17px;
+    font-family:inherit; font-size:16px; font-weight:700; color:#fff; background:var(--accent); box-shadow:var(--shadow-sm); transition:.14s; display:inline-flex; align-items:center; justify-content:center; gap:9px;}
+  .submit:active{transform:translateY(1px);}
+  .submit[disabled]{opacity:.5; cursor:default;}
+  .submit .i{width:18px;height:18px;}
+
+  .micro{font-size:12.5px; color:var(--g3); margin-top:13px; display:flex; align-items:center; gap:7px; justify-content:center;}
+  .micro .i{width:14px;height:14px; color:var(--g3);}
+  .offramp{display:block; text-align:center; margin-top:16px; font-size:14px; color:var(--g3); background:none; border:none; width:100%; cursor:pointer; font-family:inherit; text-decoration:underline; text-underline-offset:3px;}
+
+  .adapt{font-family:"Space Mono",monospace; font-size:11.5px; color:var(--wine); background:#F6ECE9; border:1.5px dashed var(--wine); border-radius:11px; padding:9px 12px; margin:0 0 16px; line-height:1.35; display:flex; align-items:center; gap:8px;}
+  .adapt .i{width:14px;height:14px;flex:0 0 auto;}
+  .adapt b{font-weight:700;}
+
+  /* confirmation ---------------------------------------------------- */
+  .confirm-card{background:#fff; border:2px solid var(--accent); border-radius:22px; padding:28px 22px; box-shadow:var(--shadow); text-align:center; margin-top:6px;}
+  .avatar{width:88px; height:88px; border-radius:50%; margin:0 auto 16px; background:var(--accent-soft); border:3px solid var(--accent); display:grid; place-items:center; color:var(--accent); font-family:"Caveat",cursive; font-weight:700; font-size:34px; position:relative;}
+  .avatar .i{width:38px;height:38px;}
+  .avatar .badge{position:absolute; right:-2px; bottom:-2px; width:30px; height:30px; border-radius:50%; background:var(--green); border:3px solid #fff; display:grid; place-items:center; color:#fff;}
+  .avatar .badge .i{width:15px;height:15px;}
+  .confirm-card h2{font-family:"Caveat",cursive; font-weight:700; font-size:33px; line-height:1.04; color:var(--accent); margin-bottom:8px;}
+  .credential{font-size:13px; color:var(--g3); margin:0 0 22px;}
+  .actions{display:flex; flex-direction:column; gap:10px;}
+  .action{appearance:none; cursor:pointer; width:100%; border-radius:15px; padding:16px; font-family:inherit; font-size:15.5px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:10px; transition:.14s; text-decoration:none;}
+  .action:active{transform:translateY(1px);}
+  .action .i{width:19px;height:19px;}
+  .action.primary{background:var(--accent); color:#fff; border:none;}
+  .action.ghost{background:#fff; color:var(--accent); border:2px solid var(--accent);}
+  .savednote{font-size:12.5px; color:var(--g3); margin-top:16px; display:flex; align-items:center; gap:6px; justify-content:center;}
+  .savednote .i{width:13px;height:13px;}
+
+  /* plan payoff ----------------------------------------------------- */
+  .planbox{background:#fff; border:2px solid var(--line); border-radius:20px; box-shadow:var(--shadow-sm); overflow:hidden; margin-top:6px;}
+  .planbox .ph{background:var(--green); color:#fff; padding:17px 19px;}
+  .planbox .ph .pk{font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--mint); display:flex; align-items:center; gap:6px;}
+  .planbox .ph .pk .i{width:13px;height:13px;}
+  .planbox .ph .pt{font-family:"Caveat",cursive; font-weight:700; font-size:29px; line-height:1; margin-top:3px;}
+  .planbox .pl{display:flex; align-items:flex-start; gap:12px; padding:14px 19px; border-top:1.5px solid var(--g1); font-size:14.5px;}
+  .planbox .pl:first-of-type{border-top:0;}
+  .planbox .pl .pi{flex:0 0 auto; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; margin-top:1px;}
+  .planbox .pl .pi.ok{background:var(--mint-soft); color:var(--green);}
+  .planbox .pl .pi.flag{background:#FFF4DA; color:#8a6a00;}
+  .planbox .pl .pi .i{width:15px;height:15px;}
+  .planbox .pl b{font-weight:700;}
+  .planbox .pl small{display:block; color:var(--g3); font-size:12.5px; margin-top:1px;}
+
+  footer{text-align:center; padding:22px 0 30px; font-size:11.5px; color:var(--g3);}
+  footer .mono{font-size:10.5px; letter-spacing:.04em;}
+
+  .skip{position:absolute; left:-9999px;}
+  .skip:focus{left:20px; top:8px; z-index:50; background:#fff; padding:8px 12px; border-radius:8px; border:2px solid var(--green);}
+
+  /* screen-reader only */
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
+
+  /* crisis lifeline — persistent human escape hatch on the NOW path */
+  .lifeline{position:fixed; left:50%; transform:translateX(-50%); bottom:16px; width:calc(100% - 40px); max-width:480px;
+    display:none; align-items:center; justify-content:center; gap:9px; text-decoration:none; color:#fff; background:var(--rust);
+    font-weight:700; font-size:15px; padding:15px; border-radius:15px; box-shadow:0 12px 28px rgba(178,58,44,.36); z-index:25;}
+  .lifeline.show{display:flex;}
+  .lifeline .i{width:18px;height:18px;}
+  .lifeline small{font-weight:400; opacity:.88; font-size:12.5px;}
+  /* keyboard focus visibility for everyone */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible{outline:3px solid var(--ink); outline-offset:2px;}
+  h1:focus-visible, h2:focus-visible{outline:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    .screen.from-right,.screen.from-left,.screen.active .choices .choice,.rchip{animation:none!important; opacity:1!important; transform:none!important;}
+    .seg{transition:none;}
+  }
+</style>
+</head>
+<body>
+<a href="#s-triage" class="skip">Skip to start</a>
+<div id="liveRegion" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ICON SPRITE ----------------------------------------------------- -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="ic-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+    <symbol id="ic-chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="ic-life" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></symbol>
+    <symbol id="ic-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></symbol>
+    <symbol id="ic-message" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="ic-video" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="ic-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="ic-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="ic-feather" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></symbol>
+    <symbol id="ic-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M12 20V9"/><path d="M12 9C12 6 9.5 3.5 5 3.5 5 7.5 7.5 9 12 9z"/><path d="M12 9c0-2.5 2-5 5.5-5C17.5 7 15.5 9 12 9z"/></symbol>
+    <symbol id="ic-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="ic-wind" viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2"/><path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"/><path d="M12.59 19.41A2 2 0 1 0 14 16H2"/></symbol>
+    <symbol id="ic-vessel" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="4" rx="1"/><path d="M5 7v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7"/><line x1="9" y1="12" x2="15" y2="12"/></symbol>
+    <symbol id="ic-landmark" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+    <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></symbol>
+    <symbol id="ic-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+    <symbol id="ic-minus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></symbol>
+    <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.52-4.48 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
+    <symbol id="ic-scale" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M3 7h18"/><path d="M6.5 7 3 14h7z"/><path d="M17.5 7 14 14h7z"/></symbol>
+    <symbol id="ic-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="ic-coins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M15 9.3a2.5 2.5 0 0 0-2.5-1.8h-1A2.5 2.5 0 0 0 9 10c0 1.4 1.1 2 2.5 2s2.5.6 2.5 2a2.5 2.5 0 0 1-2.5 2.2h-1A2.5 2.5 0 0 1 9 14.7"/></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="ic-box" viewBox="0 0 24 24"><path d="M20 8v13H4V8"/><path d="M2 3h20v5H2z"/><path d="M10 12h4"/></symbol>
+    <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="ic-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  </defs>
+</svg>
+
+<div class="app">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="toprow">
+      <button class="back" id="backBtn" aria-label="Go back"><svg class="i"><use href="#ic-arrow-left"/></svg></button>
+      <div class="brand">Renidy<span>.</span></div>
+      <span class="trustpill" id="trustPill"><svg class="i"><use href="#ic-shield"/></svg> Free first call · Private</span>
     </div>
-  </body>
+    <div class="stepper" id="stepper"></div>
+    <div class="recap" id="recap"></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══════════ TRIAGE ═══════════ -->
+    <section class="screen active" id="s-triage" data-track="entry">
+      <p class="eyebrow"><svg class="i"><use href="#ic-shield"/></svg> A certified care advisor · not a funeral home</p>
+      <h1>You don't have to figure out the next part alone.</h1>
+      <p class="say">One question, then we point you to the right kind of help. Talking to a care advisor is free.</p>
+      <p class="q">What brings you here today?</p>
+      <div class="choices" style="gap:14px;">
+        <button class="cta now" data-capture="urgency" data-value="now" data-event="triage_tap" data-next="s-now-fork">
+          <span class="cic"><svg class="i"><use href="#ic-life"/></svg></span>
+          <span><span class="lbl">I need help now</span><span class="big">Someone just died</span><span class="sub2">We'll get a real person with you fast.</span></span>
+          <span class="arrow"><svg class="i"><use href="#ic-arrow"/></svg></span>
+        </button>
+        <button class="cta ahead" data-capture="urgency" data-value="ahead" data-event="triage_tap" data-next="s-ahead-fork">
+          <span class="cic"><svg class="i"><use href="#ic-calendar"/></svg></span>
+          <span><span class="lbl">Before anything happens</span><span class="big">I'm planning ahead</span><span class="sub2">Take your time — we'll guide you.</span></span>
+          <span class="arrow"><svg class="i"><use href="#ic-arrow"/></svg></span>
+        </button>
+      </div>
+      <!-- TODO: restore "20,000+ families helped · Largest doula network · HIPAA-compliant" only once each claim is verified and legally cleared -->
+      <p class="micro" style="margin-top:22px;">A real person, free to start · Private · No upsells</p>
+    </section>
+
+    <!-- ═══════════ NOW ═══════════ -->
+    <section class="screen" id="s-now-fork" data-track="now" data-step="1">
+      <p class="eyebrow"><svg class="i"><use href="#ic-heart"/></svg> We've got you</p>
+      <h2>Take a breath. Two ways to start — both free.</h2>
+      <p class="say">Talk to a care advisor now, or take the first steps yourself. Both are free.</p>
+      <div class="choices">
+        <button class="choice" data-capture="mode" data-value="chat" data-event="funnel_start" data-next="s-now-channel">
+          <span class="ic"><svg class="i"><use href="#ic-life"/></svg></span>
+          <span class="ct"><b>Talk to a care advisor</b><small>A real advisor who can help — free.</small></span>
+          <span class="freebadge">Free</span>
+        </button>
+        <button class="choice" data-capture="mode" data-value="build" data-event="funnel_start" data-next="s-diy-q1">
+          <span class="ic"><svg class="i"><use href="#ic-clipboard"/></svg></span>
+          <span class="ct"><b>Start on my own</b><small>A few simple questions, at your own pace.</small></span>
+          <span class="freebadge">Free</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-now-channel" data-track="now" data-step="2">
+      <p class="eyebrow"><svg class="i"><use href="#ic-life"/></svg> Talk to a care advisor</p>
+      <h2>How do you want to start?</h2>
+      <p class="say">However's easiest right now — we'll meet you there.</p>
+      <div class="choices">
+        <button class="choice" data-capture="channel" data-value="chat" data-chat="1" data-next="s-now-confirm"><span class="ic"><svg class="i"><use href="#ic-message"/></svg></span><span class="ct"><b>Chat right here, now</b><small>Message an advisor right now.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="channel" data-value="phone" data-next="s-now-detail"><span class="ic"><svg class="i"><use href="#ic-phone"/></svg></span><span class="ct"><b>A phone call</b><small>Leave your number &amp; a good time.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="channel" data-value="video" data-next="s-now-detail"><span class="ic"><svg class="i"><use href="#ic-video"/></svg></span><span class="ct"><b>A video call</b><small>Leave your details &amp; a good time.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-now-detail" data-track="now" data-step="3">
+      <p class="eyebrow"><svg class="i"><use href="#ic-lock"/></svg> Last step</p>
+      <h2 id="nowDetailHead">Where should we reach you?</h2>
+      <p class="say">Leave your details and a good time — that's all we need.</p>
+      <form id="nowForm" novalidate>
+        <div class="field">
+          <label for="now-name">Your first name</label>
+          <input id="now-name" name="name" type="text" autocomplete="given-name" placeholder="e.g. Crystal" required>
+          <span class="err">Please add your name.</span>
+        </div>
+        <div class="field">
+          <label for="now-phone">Best phone number</label>
+          <input id="now-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(210) 555-0142" required>
+          <span class="err">Please add a valid phone number.</span>
+        </div>
+        <p class="fieldlabel">When's good?</p>
+        <div class="pills" data-group="timing">
+          <button type="button" class="pill" data-value="now">Right now</button>
+          <button type="button" class="pill" data-value="today">Later today</button>
+          <button type="button" class="pill" data-value="week">This week</button>
+        </div>
+        <button class="submit" type="submit" style="margin-top:18px;">Connect me with a care advisor <svg class="i"><use href="#ic-arrow"/></svg></button>
+      </form>
+      <p class="micro"><svg class="i"><use href="#ic-lock"/></svg> Private — we never sell your info. By continuing, you agree to be contacted.</p>
+    </section>
+
+    <section class="screen" id="s-now-confirm" data-track="now" data-step="4">
+      <p class="eyebrow center" style="justify-content:center;"><svg class="i"><use href="#ic-check"/></svg> You're connected</p>
+      <div class="confirm-card">
+        <div class="avatar">D<span class="badge"><svg class="i"><use href="#ic-check"/></svg></span></div>
+        <h2 id="nowConfirmHead">Your care advisor is ready to help you now.</h2>
+        <!-- TODO: replace "Debra" with the real matched advisor's name/photo -->
+        <p class="credential">Your care advisor, Debra — a certified death doula — helps families through everything that comes next. Your first 30 minutes are free.</p>
+        <div class="actions">
+          <button class="action primary" id="startChatBtn"><svg class="i"><use href="#ic-message"/></svg> Start live chat now</button>
+          <a class="action ghost" id="bookBtn" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#ic-calendar"/></svg> Book a time that works</a>
+          <a class="action ghost" id="callBtn" href="tel:+12105550142"><svg class="i"><use href="#ic-phone"/></svg> Call us now</a>
+          <button class="action ghost" data-bundle="1" data-event="bundle_open_cta"><svg class="i"><use href="#ic-clipboard"/></svg> Or start your free plan</button>
+        </div>
+        <p class="savednote" id="nowSavedNote"><svg class="i"><use href="#ic-check"/></svg> We've texted you a link so you can pick this back up anytime.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ AHEAD ═══════════ -->
+    <section class="screen" id="s-ahead-fork" data-track="ahead" data-step="1">
+      <p class="eyebrow"><svg class="i"><use href="#ic-calendar"/></svg> Planning ahead</p>
+      <h2>How would you like to begin?</h2>
+      <p class="say">Either way you're supported, and it's free. There's no wrong choice.</p>
+      <div class="choices">
+        <button class="choice" data-capture="mode" data-value="guided" data-event="funnel_start" data-next="s-ahead-who">
+          <span class="ic"><svg class="i"><use href="#ic-life"/></svg></span>
+          <span class="ct"><b>Have a care advisor guide me</b><small>A certified advisor walks you through it all.</small></span>
+          <span class="freebadge">Free</span>
+        </button>
+        <button class="choice" data-capture="mode" data-value="diy" data-event="funnel_start" data-next="s-diy-q1">
+          <span class="ic"><svg class="i"><use href="#ic-clipboard"/></svg></span>
+          <span class="ct"><b>Explore on my own first</b><small>At your own pace — an advisor's one tap away.</small></span>
+          <span class="freebadge">Free</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-ahead-who" data-track="ahead" data-step="2">
+      <p class="eyebrow"><svg class="i"><use href="#ic-user"/></svg> A little about you</p>
+      <h2>Who are you planning for?</h2>
+      <p class="say">No wrong answer — it just helps us get ready for you.</p>
+      <div class="pills" data-group="relationship">
+        <button class="pill" data-value="self">Myself</button>
+        <button class="pill" data-value="parent">A parent</button>
+        <button class="pill" data-value="spouse">A spouse</button>
+        <button class="pill" data-value="other">Someone else</button>
+      </div>
+      <p class="fieldlabel">Any sense of when?</p>
+      <div class="pills" data-group="timeframe">
+        <button class="pill" data-value="soon">Within the year</button>
+        <button class="pill" data-value="later">Further out</button>
+        <button class="pill" data-value="unsure">Not sure yet</button>
+      </div>
+      <button class="submit" id="aheadWhoNext" data-next="s-ahead-detail" disabled>Continue <svg class="i"><use href="#ic-arrow"/></svg></button>
+    </section>
+
+    <section class="screen" id="s-ahead-detail" data-track="ahead" data-step="3">
+      <p class="eyebrow"><svg class="i"><use href="#ic-lock"/></svg> Last step</p>
+      <h2>Set up your free call</h2>
+      <p class="say">Pick a time and how you'd like to meet — then where to reach you.</p>
+      <form id="aheadForm" novalidate>
+        <p class="fieldlabel">When works to talk?</p>
+        <div class="pills" data-group="timing">
+          <button type="button" class="pill" data-value="week">This week</button>
+          <button type="button" class="pill" data-value="nextweek">Next week</button>
+          <button type="button" class="pill" data-value="info">Just send info</button>
+        </div>
+        <p class="fieldlabel">How would you like to meet?</p>
+        <div class="pills" data-group="reachchannel">
+          <button type="button" class="pill" data-value="call">Call</button>
+          <button type="button" class="pill" data-value="text">Text</button>
+          <button type="button" class="pill sel" data-value="video">Video</button>
+        </div>
+        <div class="field" style="margin-top:20px;">
+          <label for="ahead-name">Your first name</label>
+          <input id="ahead-name" name="name" type="text" autocomplete="given-name" placeholder="e.g. Crystal" required>
+          <span class="err">Please add your name.</span>
+        </div>
+        <div class="field">
+          <label for="ahead-phone">Phone number</label>
+          <input id="ahead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(210) 555-0142" required>
+          <span class="err">Please add a valid phone number.</span>
+        </div>
+        <div class="field">
+          <label for="ahead-email">Email</label>
+          <input id="ahead-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required>
+          <span class="err">Please add a valid email.</span>
+        </div>
+        <div class="field">
+          <label for="ahead-zip">ZIP code <span style="text-transform:none; letter-spacing:0;">— matches you with help nearby</span></label>
+          <input id="ahead-zip" name="zip" type="text" autocomplete="postal-code" inputmode="numeric" placeholder="78205">
+        </div>
+        <button class="submit" type="submit" style="margin-top:8px;">Book my free call <svg class="i"><use href="#ic-arrow"/></svg></button>
+      </form>
+      <p class="micro"><svg class="i"><use href="#ic-lock"/></svg> Private — we never sell your info. By continuing, you agree to be contacted about your request.</p>
+    </section>
+
+    <section class="screen" id="s-ahead-confirm" data-track="ahead" data-step="4">
+      <p class="eyebrow center" style="justify-content:center;"><svg class="i"><use href="#ic-check"/></svg> You're booked</p>
+      <div class="confirm-card">
+        <div class="avatar"><svg class="i"><use href="#ic-calendar"/></svg><span class="badge"><svg class="i"><use href="#ic-check"/></svg></span></div>
+        <h2>Your care advisor will video-call you within a day.</h2>
+        <p class="credential">A certified care advisor — a death doula — will reach out to confirm your free 30-minute call. Want to get a head start?</p>
+        <div class="actions">
+          <button class="action primary" data-bundle="1" data-event="bundle_intent"><svg class="i"><use href="#ic-clipboard"/></svg> Build my free plan now</button>
+          <a class="action ghost" id="aheadBookBtn" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#ic-calendar"/></svg> Pick a time on the calendar</a>
+        </div>
+        <p class="savednote"><svg class="i"><use href="#ic-check"/></svg> We've saved your details so nothing gets lost.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ DIY ═══════════ -->
+    <section class="screen" id="s-diy-q1" data-track="diy" data-step="1">
+      <p class="eyebrow"><svg class="i"><use href="#ic-feather"/></svg> Arrangement</p>
+      <h2>What kind of arrangement feels right?</h2>
+      <p class="say">Free, about 3 minutes — and nothing's locked in. You can change any answer later.</p>
+      <div class="choices">
+        <button class="choice" data-capture="diy_disposition" data-value="cremation" data-next="s-diy-q2"><span class="ic"><svg class="i"><use href="#ic-feather"/></svg></span><span class="ct"><b>Cremation</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_disposition" data-value="burial" data-next="s-diy-q2"><span class="ic"><svg class="i"><use href="#ic-sprout"/></svg></span><span class="ct"><b>Burial</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_disposition" data-value="green" data-next="s-diy-q2"><span class="ic"><svg class="i"><use href="#ic-leaf"/></svg></span><span class="ct"><b>Green / natural</b><small>Gentler on the earth.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_disposition" data-value="unsure" data-next="s-diy-q2"><span class="ic"><svg class="i"><use href="#ic-help"/></svg></span><span class="ct"><b>Not sure yet</b><small>We'll help you weigh it.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-diy-q2" data-track="diy" data-step="2">
+      <p class="eyebrow"><svg class="i"><use href="#ic-users"/></svg> The farewell</p>
+      <h2>What kind of farewell?</h2>
+      <p class="say">The gathering that brings people together — pick what feels right.</p>
+      <div class="choices">
+        <button class="choice" data-capture="diy_farewell" data-value="traditional" data-next="s-diy-q3"><span class="ic"><svg class="i"><use href="#ic-landmark"/></svg></span><span class="ct"><b>A traditional funeral</b><small>A formal service to say goodbye.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_farewell" data-value="memorial" data-next="s-diy-q3"><span class="ic"><svg class="i"><use href="#ic-heart"/></svg></span><span class="ct"><b>A memorial gathering</b><small>To remember them, any time after.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_farewell" data-value="celebration" data-next="s-diy-q3"><span class="ic"><svg class="i"><use href="#ic-star"/></svg></span><span class="ct"><b>A celebration of life</b><small>Informal and personal.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_farewell" data-value="graveside" data-next="s-diy-q3"><span class="ic"><svg class="i"><use href="#ic-sprout"/></svg></span><span class="ct"><b>Something simple</b><small>Close family, no big service.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_farewell" data-value="unsure" data-next="s-diy-q3"><span class="ic"><svg class="i"><use href="#ic-help"/></svg></span><span class="ct"><b>Not sure yet</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-diy-q3" data-track="diy" data-step="3">
+      <p class="eyebrow"><svg class="i"><use href="#ic-pin"/></svg> Where</p>
+      <h2>Where would you picture it?</h2>
+      <p class="say">We'll find places near you that fit — you don't need to know names.</p>
+      <div class="choices">
+        <button class="choice" data-capture="diy_where" data-value="funeralhome" data-next="s-diy-q4"><span class="ic"><svg class="i"><use href="#ic-landmark"/></svg></span><span class="ct"><b>A funeral home</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_where" data-value="worship" data-next="s-diy-q4"><span class="ic"><svg class="i"><use href="#ic-landmark"/></svg></span><span class="ct"><b>A church or place of worship</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_where" data-value="home" data-next="s-diy-q4"><span class="ic"><svg class="i"><use href="#ic-heart"/></svg></span><span class="ct"><b>At home</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_where" data-value="outdoors" data-next="s-diy-q4"><span class="ic"><svg class="i"><use href="#ic-leaf"/></svg></span><span class="ct"><b>Outdoors</b><small>A park, garden, or special spot.</small></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_where" data-value="help" data-next="s-diy-q4"><span class="ic"><svg class="i"><use href="#ic-life"/></svg></span><span class="ct"><b>Help me find a place</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-diy-q4" data-track="diy" data-step="4">
+      <p class="eyebrow"><svg class="i"><use href="#ic-pin"/></svg> Resting place</p>
+      <div class="adapt" id="diyRestNote"><svg class="i"><use href="#ic-spark"/></svg><span></span></div>
+      <h2 id="diyRestHead">And afterward?</h2>
+      <p class="say" id="diyRestSay">Where they'll rest — no need to decide it all today.</p>
+      <div class="choices" id="diyRestChoices"></div>
+    </section>
+
+    <section class="screen" id="s-diy-q5" data-track="diy" data-step="5">
+      <p class="eyebrow"><svg class="i"><use href="#ic-landmark"/></svg> Traditions</p>
+      <h2>Any traditions to honor?</h2>
+      <p class="say">Pick any that apply — we'll fold in the right steps.</p>
+      <div class="pills" data-group="diy_rites" data-multi="1" style="flex-direction:column;">
+        <button type="button" class="pill" data-value="faith" style="text-align:left;">Faith or religious customs</button>
+        <button type="button" class="pill" data-value="cultural" style="text-align:left;">Cultural or family traditions</button>
+        <button type="button" class="pill" data-value="military" style="text-align:left;">Military or veteran honors</button>
+        <button type="button" class="pill" data-value="eco" style="text-align:left;">Green / eco-friendly</button>
+        <button type="button" class="pill" data-value="none" style="text-align:left;">None — keep it simple</button>
+      </div>
+      <button class="submit" data-next="s-diy-q6" style="margin-top:14px;">Continue <svg class="i"><use href="#ic-arrow"/></svg></button>
+    </section>
+
+    <section class="screen" id="s-diy-q6" data-track="diy" data-step="6">
+      <p class="eyebrow"><svg class="i"><use href="#ic-coins"/></svg> Budget</p>
+      <h2>What's your comfort with cost?</h2>
+      <p class="say">No judgment — this tunes every option you'll see to your range.</p>
+      <div class="choices">
+        <button class="choice" data-capture="diy_budget" data-value="simple" data-event="bundle_generated" data-next="s-diy-plan"><span class="ic"><svg class="i"><use href="#ic-leaf"/></svg></span><span class="ct"><b>Keep it simple &amp; affordable</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_budget" data-value="balanced" data-event="bundle_generated" data-next="s-diy-plan"><span class="ic"><svg class="i"><use href="#ic-scale"/></svg></span><span class="ct"><b>A balanced middle</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+        <button class="choice" data-capture="diy_budget" data-value="premium" data-event="bundle_generated" data-next="s-diy-plan"><span class="ic"><svg class="i"><use href="#ic-star"/></svg></span><span class="ct"><b>Whatever feels right</b></span><span class="arrow"><svg class="i"><use href="#ic-chevron"/></svg></span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="s-diy-plan" data-track="diy" data-step="7">
+      <p class="eyebrow center" style="justify-content:center;"><svg class="i"><use href="#ic-check"/></svg> Here's your plan</p>
+      <div class="planbox">
+        <div class="ph"><div class="pk"><svg class="i"><use href="#ic-check"/></svg> Your plan · ready to keep</div><div class="pt">Your personalized plan</div></div>
+        <div id="planRows"></div>
+      </div>
+      <p class="say center" style="margin:18px auto 14px;">This is your starting point — not the final word. Want it saved, or someone to take it from here?</p>
+      <form id="diySaveForm" novalidate>
+        <div class="field">
+          <label for="diy-email">Email my plan to</label>
+          <input id="diy-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required>
+          <span class="err">Please add a valid email.</span>
+        </div>
+        <div class="field">
+          <label for="diy-zip">ZIP code <span style="text-transform:none; letter-spacing:0;">— to find services near you</span></label>
+          <input id="diy-zip" name="zip" type="text" autocomplete="postal-code" inputmode="numeric" placeholder="78205">
+        </div>
+        <button class="submit" type="submit"><svg class="i"><use href="#ic-check"/></svg> Email me my plan</button>
+      </form>
+      <p class="savednote" id="diySentNote" style="display:none;"></p>
+      <div class="actions" style="margin-top:14px;">
+        <button class="action primary" data-bundle="1" data-event="bundle_open_cta"><svg class="i"><use href="#ic-arrow"/></svg> Open my bundle &amp; find services</button>
+        <button class="action ghost" data-next="s-now-detail" data-capture="mode" data-value="review" data-event="soft_handoff"><svg class="i"><use href="#ic-life"/></svg> Have a care advisor finish this — free</button>
+      </div>
+    </section>
+
+  </main>
+
+  <a id="lifeline" class="lifeline" href="tel:+12105550142" aria-label="Call a care advisor now">
+    <svg class="i"><use href="#ic-phone"/></svg>
+    <span>Talk to a care advisor <small>· (210) 555-0142</small></span>
+  </a>
+
+  <footer>
+    <div class="mono">RENIDY · private &amp; secure · not a funeral home</div>
+    <div style="margin-top:6px;">© 2026 Renidy. Your first call is free.</div>
+  </footer>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   RENIDY LEAD FUNNEL — config + controller (portable, no deps)
+   ════════════════════════════════════════════════════════════════ */
+
+const RENIDY_CONFIG = {
+  leadEndpoint: "",                        // POST leads here (Zapier/HubSpot/Slack/custom). "" = skip.
+  bookingUrl: "https://renidy.com/book",   // scheduling link (Avail/Calendly/Cal.com)
+  marketplaceUrl: "https://renidy.com/marketplace", // (legacy) services target; ?zip= appended
+  bundleUrl: "https://renidy.com/ai-funeral-planner", // the funeral bundle in the family dashboard — every payoff lands here, prefilled
+
+  phoneNumber: "+12105550142",
+  phoneDisplay: "(210) 555-0142",
+  openLiveChat: function(state){ /* wire Intercom/Drift/Crisp; return true if opened */ return false; },
+  ga4: true,
+  debug: true,
+  experiment: "role_term_v1",   // A/B: "care advisor" (control) vs "guide" (treatment)
+  abEnabled: true               // set false to lock everyone to "care advisor"
+};
+
+const STORE_KEY = "renidy_funnel_v1";
+let state = loadState();
+function loadState(){ try{ return JSON.parse(sessionStorage.getItem(STORE_KEY)) || {}; }catch(e){ return {}; } }
+function saveState(){ try{ sessionStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
+
+function track(event, extra){
+  const payload = Object.assign({ event:event, urgency:state.urgency||null, mode:state.mode||null, variant: window.__renidyVariant || null }, extra||{});
+  if (RENIDY_CONFIG.ga4){ window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); }
+  if (RENIDY_CONFIG.debug) console.log("%c[renidy event]","color:#013927;font-weight:700", event, payload);
+}
+function submitLead(eventName){
+  const lead = {
+    name: state.name||"", phone: state.phone||"", email: state.email||"", zip: state.zip||"", tz: state.tz||"",
+    urgency: state.urgency||"", mode: state.mode||"", channel: state.channel||"",
+    timing: state.timing||"", reachchannel: state.reachchannel||"",
+    source: "renidy-funnel", page: location.href, ts: new Date().toISOString()
+  };
+  track(eventName, { lead_present:true });
+  if (RENIDY_CONFIG.leadEndpoint){
+    try{ fetch(RENIDY_CONFIG.leadEndpoint, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(lead), keepalive:true}).catch(function(){}); }catch(e){}
+  }
+  if (RENIDY_CONFIG.debug) console.log("%c[renidy LEAD]","color:#B23A2C;font-weight:700", lead);
+}
+
+/* experiments + URL routing ---------------------------------------- */
+function getParam(n){ try{ return new URLSearchParams(location.search).get(n); }catch(e){ return null; } }
+function pickVariant(){
+  if (!RENIDY_CONFIG.abEnabled) return "care_advisor";
+  const forced = (getParam("ab") || "").toLowerCase();          // ads can force a variant: ?ab=guide / ?ab=care
+  if (forced === "guide" || forced === "b") return "guide";
+  if (forced === "care" || forced === "care_advisor" || forced === "a") return "care_advisor";
+  try{ const saved = localStorage.getItem("renidy_ab_role"); if (saved) return saved; }catch(e){}
+  const v = (Math.random() < 0.5) ? "care_advisor" : "guide";   // 50/50 split, persisted
+  try{ localStorage.setItem("renidy_ab_role", v); }catch(e){}
+  return v;
+}
+// Build the family-dashboard bundle URL, prefilled with what they told us (no PII — that
+// already went to leadEndpoint). Carries selections + the A/B variant + ad params.
+function bundleHref(){
+  const base = RENIDY_CONFIG.bundleUrl;
+  const p = new URLSearchParams();
+  ["urgency","mode","diy_disposition","diy_farewell","diy_where","diy_resting","diy_budget","zip"].forEach(function(k){
+    if (state[k]) p.set(k, state[k]);
+  });
+  if (Array.isArray(state.diy_rites) && state.diy_rites.length) p.set("diy_rites", state.diy_rites.join(","));
+  if (window.__renidyVariant) p.set("variant", window.__renidyVariant);
+  try{ const cur = new URLSearchParams(location.search);
+    ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","ab","gclid","fbclid"].forEach(function(k){ const v = cur.get(k); if (v) p.set(k, v); });
+  }catch(e){}
+  const qs = p.toString();
+  return base + (qs ? (base.indexOf("?") >= 0 ? "&" : "?") + qs : "");
+}
+function openBundle(){
+  const z = document.getElementById("diy-zip"); // grab ZIP even if they didn't submit the email form
+  if (z && z.value.trim()){ state.zip = z.value.trim(); saveState(); }
+  track("bundle_open"); window.location.href = bundleHref();
+}
+
+// Swap the role noun in place for the "guide" variant (control keeps "care advisor").
+function applyRole(root){
+  if (!root || (window.__renidyRoleTerm || "care advisor") === "care advisor") return;
+  const term = window.__renidyRoleTerm;
+  const cap = term.charAt(0).toUpperCase() + term.slice(1);
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  const nodes = []; let t; while ((t = walker.nextNode())) nodes.push(t);
+  nodes.forEach(function(node){
+    const s = node.nodeValue;
+    if (s.indexOf("advisor") < 0) return;
+    node.nodeValue = s.replace(/care advisor/g, term).replace(/Care advisor/g, cap)
+                      .replace(/an advisor/g, "a " + term).replace(/advisor/g, term);
+  });
+}
+
+/* navigation ------------------------------------------------------- */
+const backBtn = document.getElementById("backBtn");
+const stepper = document.getElementById("stepper");
+const recap = document.getElementById("recap");
+const trustPill = document.getElementById("trustPill");
+const main = document.getElementById("main");
+let history = [];
+
+const STEPS = {
+  now:   ["Start","How","Your details","Connected"],
+  ahead: ["How","About you","Your details","Booked"],
+  diy:   ["Arrangement","Farewell","Where","Resting place","Traditions","Budget","Your plan"]
+};
+
+function svgIcon(id){ return '<svg class="i"><use href="#ic-'+id+'"/></svg>'; }
+
+function show(id, isBack){
+  const next = document.getElementById(id);
+  if (!next) return;
+  const current = document.querySelector(".screen.active");
+  if (current === next) return;
+  if (!isBack && current) history.push(current.id);
+  if (current){ current.classList.remove("active","from-right","from-left"); }
+  next.classList.remove("from-right","from-left");
+  next.classList.add("active", isBack ? "from-left" : "from-right");
+  updateChrome(next);
+  window.scrollTo(0,0);
+  applyRole(document.querySelector(".app"));
+  announce(next);
+  // a11y: move focus to the screen's heading so screen readers read the question,
+  // not a random control. Keyboard users then Tab to the first option.
+  if (id !== "s-triage"){
+    const h = next.querySelector("h1, h2");
+    const target = h || next.querySelector("button, input, select, a.action");
+    if (h) h.setAttribute("tabindex","-1");
+    if (target) setTimeout(function(){ try{ target.focus({preventScroll:true}); }catch(e){} }, 70);
+  }
+}
+
+function announce(screen){
+  const lr = document.getElementById("liveRegion"); if (!lr) return;
+  const label = stepper.querySelector(".seg-label");
+  const h = screen.querySelector("h1, h2");
+  lr.textContent = (label ? label.textContent.replace(/\s+/g," ").trim() + ". " : "") + (h ? h.textContent.trim() : "");
+}
+
+function updateChrome(screen){
+  const tr = screen.getAttribute("data-track");
+  const step = parseInt(screen.getAttribute("data-step")||"0", 10);
+  backBtn.classList.toggle("show", history.length > 0);
+  const lifeline = document.getElementById("lifeline");
+  if (lifeline) lifeline.classList.toggle("show", tr === "now" && screen.id !== "s-now-confirm" && state.mode !== "review");
+  renderStepper(tr, step);
+  renderRecap(tr);
+  if (tr === "now") trustPill.innerHTML = svgIcon("heart") + " We're with you · Private";
+  else if (tr === "diy") trustPill.innerHTML = svgIcon("lock") + " Free · No account needed";
+  else trustPill.innerHTML = svgIcon("shield") + " Free first call · Private";
+}
+
+function renderStepper(tr, step){
+  const labels = STEPS[tr];
+  if (!labels || step < 1){ stepper.className = "stepper"; stepper.innerHTML = ""; return; }
+  const idx = step - 1;
+  let html = '<div class="seg-track">';
+  for (let i=0;i<labels.length;i++){ html += '<span class="seg '+(i<idx?'done':(i===idx?'cur':''))+'"></span>'; }
+  html += '</div><div class="seg-label">Step '+(idx+1)+' of '+labels.length+' · <b>'+labels[idx]+'</b></div>';
+  stepper.innerHTML = html;
+  stepper.className = "stepper show";
+}
+
+/* running recap (DIY) ---------------------------------------------- */
+const RECAP_KEYS = ["diy_disposition","diy_farewell","diy_where","diy_resting","diy_rites","diy_budget"];
+const RECAP_LABEL = {
+  diy_disposition:{cremation:"Cremation",burial:"Burial",green:"Green",unsure:"Deciding"},
+  diy_farewell:{traditional:"Funeral",memorial:"Memorial",celebration:"Celebration",graveside:"Simple",unsure:"Service TBD"},
+  diy_where:{funeralhome:"Funeral home",worship:"Place of worship",home:"At home",outdoors:"Outdoors",help:"Find a venue"},
+  diy_resting:{keep:"Keep ashes",scatter:"Scatter",inter:"Inter urn",keepsake:"Keepsakes",plot:"Plot",mausoleum:"Mausoleum",family:"Family land",natural:"Natural",land:"Private land",tree:"Memorial tree",compare:"Comparing",advisor:"With advisor",unsure:"TBD"},
+  diy_rites:{faith:"Faith",cultural:"Cultural",military:"Military",eco:"Eco",none:"Simple"},
+  diy_budget:{simple:"Affordable",balanced:"Balanced",premium:"Full-service"}
+};
+function rchip(t){ return '<span class="rchip">'+svgIcon("check")+t+'</span>'; }
+function renderRecap(tr){
+  if (tr !== "diy"){ recap.className = "recap"; recap.innerHTML = ""; return; }
+  const chips = [];
+  RECAP_KEYS.forEach(function(k){
+    const v = state[k];
+    if (Array.isArray(v)){ v.forEach(function(item){ if (RECAP_LABEL[k] && RECAP_LABEL[k][item]) chips.push(rchip(RECAP_LABEL[k][item])); }); }
+    else if (v && RECAP_LABEL[k] && RECAP_LABEL[k][v]){ chips.push(rchip(RECAP_LABEL[k][v])); }
+  });
+  if (!chips.length){ recap.className = "recap"; recap.innerHTML = ""; return; }
+  recap.innerHTML = chips.join("");
+  recap.className = "recap show";
+}
+
+backBtn.addEventListener("click", function(){ const prev = history.pop(); if (prev) show(prev, true); });
+
+/* delegated clicks -------------------------------------------------- */
+document.addEventListener("click", function(e){
+  const el = e.target.closest("[data-next], [data-capture], .pill, .action");
+  if (!el) return;
+  if (el.classList.contains("pill")){ handlePill(el); return; }
+  if (el.getAttribute("data-bundle")){ e.preventDefault(); const be = el.getAttribute("data-event"); if (be) track(be); openBundle(); return; }
+  const cap = el.getAttribute("data-capture");
+  if (cap){ state[cap] = el.getAttribute("data-value"); saveState(); }
+  if (el.getAttribute("data-chat")){ state.startChat = true; saveState(); track("consult_started"); }
+  const ev = el.getAttribute("data-event");
+  if (ev){ if (ev === "lead_captured" || ev === "consult_started" || ev === "soft_handoff") submitLead(ev); else track(ev); }
+  const next = el.getAttribute("data-next");
+  if (next){
+    e.preventDefault();
+    if (next === "s-diy-q4") buildResting();
+    if (next === "s-diy-plan") buildPlan();
+    if (next === "s-now-confirm") prepNowConfirm();
+    show(next);
+  }
+});
+
+function handlePill(el){
+  const group = el.parentElement;
+  const key = group.getAttribute("data-group");
+  if (group.getAttribute("data-multi")){
+    el.classList.toggle("sel");
+    el.setAttribute("aria-checked", el.classList.contains("sel") ? "true" : "false");
+    state[key] = Array.prototype.slice.call(group.querySelectorAll(".pill.sel")).map(function(p){return p.getAttribute("data-value");});
+  } else {
+    group.querySelectorAll(".pill").forEach(function(p){ p.classList.remove("sel"); p.setAttribute("aria-checked","false"); });
+    el.classList.add("sel"); el.setAttribute("aria-checked","true");
+    state[key] = el.getAttribute("data-value");
+  }
+  saveState(); refreshGates();
+}
+function refreshGates(){
+  const nowWhen = document.getElementById("nowWhenNext");
+  if (nowWhen) nowWhen.disabled = !(state.timing && state.reachchannel);
+  const aheadWho = document.getElementById("aheadWhoNext");
+  if (aheadWho) aheadWho.disabled = !(state.relationship && state.timeframe);
+}
+
+/* forms ------------------------------------------------------------- */
+function wireForm(formId, primaryEvent, nextId, extra){
+  const form = document.getElementById(formId);
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    let ok = true;
+    const name = form.querySelector('[name="name"]');
+    const phone = form.querySelector('[name="phone"]');
+    const tz = form.querySelector('[name="tz"]');
+    const email = form.querySelector('[name="email"]');
+    const zip = form.querySelector('[name="zip"]');
+    if (!name.value.trim()){ name.closest(".field").classList.add("invalid"); ok = false; } else name.closest(".field").classList.remove("invalid");
+    if (!validPhone(phone.value)){ phone.closest(".field").classList.add("invalid"); ok = false; } else phone.closest(".field").classList.remove("invalid");
+    if (email && !validEmail(email.value)){ email.closest(".field").classList.add("invalid"); ok = false; } else if (email){ email.closest(".field").classList.remove("invalid"); }
+    if (!ok){ form.querySelector(".invalid input").focus(); return; }
+    state.name = name.value.trim(); state.phone = phone.value.trim(); if (tz) state.tz = tz.value;
+    if (email) state.email = email.value.trim(); if (zip) state.zip = zip.value.trim(); saveState();
+    submitLead("lead_captured");
+    if (primaryEvent) track(primaryEvent);
+    if (extra) extra();
+    if (nextId === "s-now-confirm") prepNowConfirm();
+    show(nextId);
+  });
+}
+function validPhone(v){ return (v.replace(/[^0-9]/g,"").length >= 10); }
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((v||"").trim()); }
+wireForm("nowForm", "consult_started", "s-now-confirm");
+wireForm("aheadForm", null, "s-ahead-confirm", function(){
+  if (!state.reachchannel) state.reachchannel = "video";
+  if (state.timing === "info") track("lead_offramp"); else track("consult_booked");
+});
+
+/* DIY: email me my plan (captures the self-serve lead) */
+(function wireDiySave(){
+  const form = document.getElementById("diySaveForm");
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const email = form.querySelector('[name="email"]');
+    if (!validEmail(email.value)){ email.closest(".field").classList.add("invalid"); email.focus(); return; }
+    email.closest(".field").classList.remove("invalid");
+    state.email = email.value.trim();
+    const zip = form.querySelector('[name="zip"]'); if (zip) state.zip = zip.value.trim();
+    saveState();
+    submitLead("lead_captured"); track("plan_emailed");
+    const note = document.getElementById("diySentNote");
+    form.style.display = "none";
+    if (note){ note.innerHTML = svgIcon("check") + " Sent to " + state.email + " — check your inbox."; note.style.display = "flex"; note.style.justifyContent = "center"; }
+  });
+})();
+
+function timingPhrase(){
+  return {now:" right now", today:" later today", week:" this week", nextweek:" next week"}[state.timing] || " shortly";
+}
+function setPrimaryAction(primId){
+  ["startChatBtn","bookBtn","callBtn"].forEach(function(id){
+    const b = document.getElementById(id); if (!b) return;
+    b.classList.toggle("primary", id === primId);
+    b.classList.toggle("ghost", id !== primId);
+    b.style.order = (id === primId) ? "-1" : "0";
+  });
+}
+function prepNowConfirm(){
+  const head = document.getElementById("nowConfirmHead");
+  const note = document.getElementById("nowSavedNote");
+  if (state.mode === "review" || state.urgency !== "now"){
+    head.textContent = "A care advisor will go through your plan with you.";
+    if (note) note.innerHTML = svgIcon("check") + " We've saved your details so nothing gets lost.";
+    setPrimaryAction("callBtn");
+    return;
+  }
+  if (state.channel === "chat"){
+    head.textContent = "Your care advisor is here. Start your chat.";
+    if (note) note.innerHTML = svgIcon("lock") + " Your conversation is private &amp; secure.";
+    setPrimaryAction("startChatBtn");
+  } else if (state.channel === "phone"){
+    head.textContent = "We'll call you" + timingPhrase() + ".";
+    if (note) note.innerHTML = svgIcon("check") + " We've texted you a link so you can pick this back up anytime.";
+    setPrimaryAction("callBtn");
+  } else if (state.channel === "video"){
+    head.textContent = "We'll video-call you" + timingPhrase() + ".";
+    if (note) note.innerHTML = svgIcon("check") + " We've texted you a link so you can pick this back up anytime.";
+    setPrimaryAction("bookBtn");
+  } else {
+    head.textContent = "Your care advisor is ready to help you now.";
+    setPrimaryAction("startChatBtn");
+  }
+}
+
+(function hydrateActions(){
+  const book = document.getElementById("bookBtn");
+  const aheadBook = document.getElementById("aheadBookBtn");
+  const call = document.getElementById("callBtn");
+  if (book) book.href = RENIDY_CONFIG.bookingUrl;
+  if (aheadBook) aheadBook.href = RENIDY_CONFIG.bookingUrl;
+  if (call){ call.href = "tel:" + RENIDY_CONFIG.phoneNumber; call.innerHTML = svgIcon("phone") + " Call " + RENIDY_CONFIG.phoneDisplay; }
+  const life = document.getElementById("lifeline");
+  if (life){ life.href = "tel:" + RENIDY_CONFIG.phoneNumber; const sm = life.querySelector("small"); if (sm) sm.textContent = "· " + RENIDY_CONFIG.phoneDisplay; }
+  const chat = document.getElementById("startChatBtn");
+  if (chat) chat.addEventListener("click", function(){
+    const opened = RENIDY_CONFIG.openLiveChat(state);
+    if (!opened) window.open(RENIDY_CONFIG.bookingUrl, "_blank", "noopener");
+  });
+  const find = document.getElementById("findServicesBtn");
+  if (find) find.addEventListener("click", function(){
+    track("find_services");
+    let u = RENIDY_CONFIG.marketplaceUrl || RENIDY_CONFIG.bookingUrl;
+    if (state.zip) u += (u.indexOf("?") >= 0 ? "&" : "?") + "zip=" + encodeURIComponent(state.zip);
+    window.open(u, "_blank", "noopener");
+  });
+})();
+
+/* DIY adaptive ------------------------------------------------------ */
+function buildResting(){
+  const note = document.getElementById("diyRestNote");
+  const head = document.getElementById("diyRestHead");
+  const say  = document.getElementById("diyRestSay");
+  const wrap = document.getElementById("diyRestChoices");
+  const d = state.diy_disposition || "cremation";
+  let label, opts;
+  if (d === "burial"){
+    label = "burial"; head.textContent = "Where would they rest?";
+    say.textContent = "A cemetery, a mausoleum, or family land — we'll line up the right people.";
+    opts = [["plot","pin","A cemetery plot"],["mausoleum","landmark","A mausoleum or crypt"],["family","sprout","Family land"],["unsure","help","Help me decide"]];
+  } else if (d === "green"){
+    label = "green / natural"; head.textContent = "Where would they rest?";
+    say.textContent = "Natural options that return gently to the earth.";
+    opts = [["natural","leaf","A natural burial ground"],["land","sprout","Family or private land"],["tree","feather","A memorial tree"],["unsure","help","Help me decide"]];
+  } else if (d === "unsure"){
+    label = "still deciding"; head.textContent = "That's okay — we'll help you choose.";
+    say.textContent = "A care advisor can walk you through burial vs cremation, cost and all.";
+    opts = [["compare","scale","Compare the options"],["advisor","life","Talk it through with a care advisor"]];
+  } else {
+    label = "cremation"; head.textContent = "What feels right afterward?";
+    say.textContent = "Keep them close, scatter somewhere meaningful, or a keepsake.";
+    opts = [["keep","vessel","Keep the ashes"],["scatter","wind","Scatter somewhere meaningful"],["inter","pin","Bury or inter the urn"],["keepsake","heart","Keepsakes for family"],["unsure","help","Help me decide"]];
+  }
+  note.querySelector("span").innerHTML = "Because you chose <b>" + label + "</b>";
+  wrap.innerHTML = opts.map(function(o){
+    return '<button class="choice" data-capture="diy_resting" data-value="'+o[0]+'" data-next="s-diy-q5">'+
+           '<span class="ic">'+svgIcon(o[1])+'</span><span class="ct"><b>'+o[2]+'</b></span>'+
+           '<span class="arrow">'+svgIcon("chevron")+'</span></button>';
+  }).join("");
+}
+
+function planCard(type, title, sub){
+  const ic = {ok:"check", flag:"alert", find:"pin"}[type] || "check";
+  const cls = (type === "flag") ? "flag" : "ok";
+  return '<div class="pl"><span class="pi '+cls+'">'+svgIcon(ic)+'</span><span><b>'+title+'</b>'+(sub?'<small>'+sub+'</small>':'')+'</span></div>';
+}
+function buildPlan(){
+  const rows = [];
+  const fwMap = {traditional:"A traditional funeral", memorial:"A memorial gathering", celebration:"A celebration of life", graveside:"A simple, close-family service", unsure:"A farewell — we'll shape it with you"};
+  const whereMap = {funeralhome:"at a funeral home", worship:"at a place of worship", home:"at home", outdoors:"outdoors", help:"— we'll help you find the place"};
+  const fw = fwMap[state.diy_farewell] || "Your farewell";
+  const wh = state.diy_where ? (whereMap[state.diy_where] || "") : "";
+  rows.push(planCard("ok", "The farewell", fw + (wh ? " " + wh : "")));
+
+  const restMap = {keep:"Ashes kept with family", scatter:"Ashes scattered somewhere meaningful", inter:"Urn buried or interred", keepsake:"Keepsakes for the family", plot:"A cemetery plot", mausoleum:"A mausoleum or crypt", family:"Family land", natural:"A natural burial ground", land:"Private land", tree:"A memorial tree", compare:"We'll compare options with you", advisor:"A care advisor will help you choose", unsure:"To be decided together"};
+  if (state.diy_resting) rows.push(planCard("ok", "Resting place", restMap[state.diy_resting] || ""));
+
+  const ritesArr = Array.isArray(state.diy_rites) ? state.diy_rites : (state.diy_rites ? [state.diy_rites] : []);
+  const realRites = ritesArr.filter(function(x){ return x !== "none"; });
+  if (realRites.length){
+    const rmap = {faith:"faith", cultural:"cultural", military:"military / veteran", eco:"green"};
+    rows.push(planCard("ok", "Traditions honored", "We'll fold in " + realRites.map(function(x){ return rmap[x]||x; }).join(", ") + " steps."));
+  }
+
+  rows.push(planCard("find", "Services to arrange", "Funeral home, venue, and vendors near you — matched to your budget."));
+  rows.push(planCard("flag", "Important documents", "Will, power of attorney, and advance directive — we'll help you get these in place."));
+
+  document.getElementById("planRows").innerHTML = rows.join("");
+}
+
+/* a11y: make pill groups operable + labelled for screen readers ----- */
+document.querySelectorAll(".pills").forEach(function(g){
+  const multi = g.getAttribute("data-multi");
+  g.setAttribute("role", multi ? "group" : "radiogroup");
+  // label the group with its field label / question, not a stray sentence
+  let label = null, p = g.previousElementSibling;
+  while (p){ if (p.classList && (p.classList.contains("fieldlabel") || p.classList.contains("q"))){ label = p.textContent.trim(); break; } p = p.previousElementSibling; }
+  if (!label){ const sc = g.closest(".screen"); const hh = sc && sc.querySelector("h1, h2"); if (hh) label = hh.textContent.trim(); }
+  if (label) g.setAttribute("aria-label", label);
+  g.querySelectorAll(".pill").forEach(function(p){
+    p.setAttribute("role", multi ? "checkbox" : "radio");
+    p.setAttribute("aria-checked", p.classList.contains("sel") ? "true" : "false");
+  });
+});
+
+/* boot -------------------------------------------------------------- */
+refreshGates();
+
+/* A/B: assign + apply the role-word variant before the copy is read */
+window.__renidyVariant  = pickVariant();
+window.__renidyRoleTerm = (window.__renidyVariant === "guide") ? "guide" : "care advisor";
+applyRole(document.querySelector(".app"));
+
+updateChrome(document.querySelector(".screen.active"));
+track("funnel_view");
+track("experiment_view", { experiment: RENIDY_CONFIG.experiment, variant: window.__renidyVariant });
+
+/* Deep-link from the landing-page CTAs: ?intent=now|ahead skips the triage */
+(function routeIntent(){
+  let intent = getParam("intent");
+  if (!intent) {
+    const path = window.location.pathname;
+    if (path.includes("/need-help-now")) intent = "now";
+    else if (path.includes("/planning-ahead")) intent = "ahead";
+  }
+  if (intent !== "now" && intent !== "ahead") return;
+  state.urgency = intent; saveState();
+  track("triage_tap", { source: "landing" });
+  show(intent === "now" ? "s-now-fork" : "s-ahead-fork");
+  history = []; backBtn.classList.remove("show");
+})();
+</script>
+</body>
 </html>
